@@ -1,0 +1,12 @@
+set default-fg "#75715E"
+set default-bg "#272822"
+
+set statusbar-fg "#75715E"
+set statusbar-bg "#272822"
+
+set recolor true
+map i recolor
+set recolor-lightcolor "#272822"
+set recolor-darkcolor "#75715E"
+#set recolor-lightcolor "#75715E"
+#set recolor-darkcolor "#272822"

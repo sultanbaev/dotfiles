@@ -1,0 +1,291 @@
+#------------------------------------------------------------------------------ set mod
+set $mod Mod4
+#--------------------------------------------------------------------------------------
+
+
+
+#--------------------------------------------------------------------------- font & app
+#font pango:monospace 8
+#font pango:DejaVu Sans Mono 8
+#font pango:Cantarell 9
+#font pango:Terminus 9.5
+font pango:Terminus Re33 Bold 10.5
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+new_window none
+new_float pixel 2
+
+workspace_layout tabbed
+
+#                          BORDER  BACKGROUND  TEXT    INDICATOR
+client.focused            #272822   #272822   #FD971F   #333333
+client.focused_inactive   #272822   #272822   #75715E   #000000
+client.unfocused          #272822   #272822   #75715E   #000000
+#--------------------------------------------------------------------------------------
+
+
+
+#---------------------------------------------------------------- drag floating windows
+floating_modifier $mod
+#--------------------------------------------------------------------------------------
+
+
+
+#---------------------------------------------------------------------------- shortcuts
+bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec xfce4-terminal --hide-menubar
+
+bindsym $mod+Shift+q kill
+
+#bindsym $mod+d exec dmenu_run -fn '7x14' -nb "#272822" -sb "#272822" -nf "#FFFFFF" -sf "#FD971F"
+bindsym $mod+d exec rofi -show run -font "Terminus Re33 Bold 11" -fg "#FFFFFF" -bg "#000000" -hlfg "#000000" -hlbg "#A6E22E" -bc "#A6E22E" -hide-scrollbar -o 85
+
+#bindsym $mod+j focus left
+#bindsym $mod+k focus down
+#bindsym $mod+l focus up
+#bindsym $mod+semicolon focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+h split h
+bindsym $mod+v split v
+
+bindsym $mod+f fullscreen toggle
+
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+bindsym $mod+Shift+space floating toggle
+
+bindsym $mod+space focus mode_toggle
+
+#bindsym $mod+a focus parent
+#bindsym $mod+d focus child
+
+bindsym $mod+Shift+c reload
+
+bindsym $mod+Shift+r restart
+
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+bindsym $mod+r mode "resize"
+
+bindsym $mod+t border toggle
+
+#bindsym $mod+l exec /home/sultanbaev/.i3/i3lock.sh
+bindsym $mod+l exec blurlock
+
+bindsym --release Print exec scrot /home/sultanbaev/Dropbox/_Documents/_Shot/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
+bindsym --release Shift+Print exec scrot -s /home/sultanbaev/Dropbox/_Documents/_Shot/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
+
+#arch
+bindsym F12 exec amixer -q set Master 1dB+ unmute
+bindsym F11 exec amixer -q set Master 1dB- unmute
+
+#debian
+#bindsym F12 exec --no-startup-id pactl set-sink-volume 0 -- +5% && killall -SIGUSR1 i3status
+#bindsym F11 exec --no-startup-id pactl set-sink-volume 0 -- -5% && killall -SIGUSR1 i3status
+#--------------------------------------------------------------------------------------
+
+
+
+#------------------------------------------------------------------ switch to workspace
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7
+bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9
+bindsym $mod+0 workspace $WS10
+
+bindsym $mod+Shift+exclam move container to workspace $WS1
+bindsym $mod+Shift+at move container to workspace $WS2
+bindsym $mod+Shift+numbersign move container to workspace $WS3
+bindsym $mod+Shift+dollar move container to workspace $WS4
+bindsym $mod+Shift+percent move container to workspace $WS5
+bindsym $mod+Shift+asciicircum move container to workspace $WS6
+bindsym $mod+Shift+ampersand move container to workspace $WS7
+bindsym $mod+Shift+asterisk move container to workspace $WS8
+bindsym $mod+Shift+parenleft move container to workspace $WS9
+bindsym $mod+Shift+parenright move container to workspace $WS10
+
+set $WS1 "1: main"
+set $WS2 "2: web"
+set $WS3 "3: media"
+set $WS4 "4: file"
+set $WS5 "5: code"
+set $WS6 "6: a"
+set $WS7 "7: b"
+set $WS8 "8: c"
+set $WS9 "9: d"
+set $WS10 "10: term"
+#--------------------------------------------------------------------------------------
+
+
+
+#------------------------------------------------------------------------------- resize
+mode "resize" {
+
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+#--------------------------------------------------------------------------------------
+
+
+
+#---------------------------------------------------------------------------------- bar
+bar {
+        #status_command i3status --config ~/.i3/i3status.conf
+        #tray_output none
+        #status_command /home/sultanbaev/.i3/i3conky.bash
+        #status_command conky -c ~/.i3/conky
+        #status_command i3status
+        status_command conky -c /home/sultanbaev/.i3/conky_bar
+        separator_symbol "-"
+
+        
+        colors {
+                   background           #272822
+                   statusline           #75715E
+                   #separator            #666666
+
+                   focused_workspace    #272822   #272822   #FD971F
+                   inactive_workspace   #272822   #272822   #75715E
+                   active_workspace     #272822   #272822   #F92672
+        
+    }
+}
+#--------------------------------------------------------------------------------------
+
+
+
+#---------------------------------------------------------------------------- autostart
+#exec dropbox /usr/bin/dropbox start -i
+#exec ~/.dropbox-dist/dropboxd
+exec dropbox
+
+#exec xpad & iceweasel & dc & vkaudiosaver
+#exec iceweasel & spacefm
+#exec iceweasel & dddd & bbbb
+exec palemoon & dddd
+
+#exec --no-startup-id feh --bg-scale ~/wl.png
+exec --no-startup-id feh --randomize --bg-scale /home/sultanbaev/Dropbox/_Documents/_Arch/*
+
+exec setxkbmap "us,ru" ",winkeys" "grp:alt_shift_toggle" "grp_led:scroll" "compose:rwin"
+
+#exec x11vnc -rfbauth /home/sultanbaev/.vnc/passwd -forever -noipv6 -display :0
+#exec x11vnc -rfbauth /home/sultanbaev/.x11vnc/passwd -forever -6 -display :0
+
+#exec xrandr --output LVDS1 --mode 1280x800 --left-of VGA1
+#exec xrandr --output VGA1 --mode 1280x1024 --right-of LVDS1
+
+#exec conky -c ~/.i3/tips
+exec guake
+#exec pidgin
+#exec go-for-it
+
+#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#exec --no-startup-id nitrogen --restore
+#exec --no-startup-id nm-applet
+#exec --no-startup-id volumeicon
+#exec --no-startup-id xfce4-power-manager
+#exec --no-startup-id pamac-tray
+#exec --no-startup-id clipit
+# exec --no-startup-id blueman
+# exec_always --no-startup-id sbxkb
+#exec --no-startup-id compton -b
+# exec --no-startup-id start_conky_grey
+#exec --no-startup-id start_conky_green
+#exec --no-startup-id xautolock -time 1 -locker blurlock
+#--------------------------------------------------------------------------------------
+
+
+
+
+#---------------------------------------------------------------- xprop | grep WM_CLASS
+for_window [class="Yakuake"] floating enabled
+for_window [class="Main.py"] floating enabled
+for_window [class="Pavucontrol"] floating enable
+#for_window [class=""] floating enable
+for_window [class="Lxappearance"] floating enable
+for_window [class="Qtconfig-qt4"] floating enable
+
+
+for_window [class="xpad"] floating enabled, move container to workspace "1: main"
+for_window [class="Transmission-gtk"] floating enabled, move container to workspace "1: main"
+for_window [class="transmission-gtk"] floating enabled, move container to workspace "1: main"
+for_window [class="Skype"] floating enable, move container to workspace "1: main"
+for_window [class="Pidgin"] floating enable, move container to workspace "1: main", workspace "1: main", focus
+for_window [class="go-for-it"] floating enabled, move container to workspace "1: main"
+for_window [class="Go-for-it"] floating enabled, move container to workspace "1: main"
+
+
+for_window [class="Firefox"] move container to workspace "2: web"
+for_window [class="Chromium-browser"] move container to workspace "2: web"
+for_window [class="Chromium"] move container to workspace "2: web"
+for_window [class="Dillo"] move container to workspace "2: web"
+for_window [class="Google-chrome-stable"] move container to workspace "2: web"
+for_window [class="google-chrome"] move container to workspace "2: web"
+for_window [class="Midori"] move container to workspace "2: web"
+for_window [class="Iceweasel"] move container to workspace "2: web"
+for_window [class="Navigator"] move container to workspace "2: web"
+for_window [class="Pale moon"] move container to workspace "2: web"
+
+for_window [class="Vkaudiosaver"] move container to workspace "3: media"
+for_window [class="Deadbeef"] move container to workspace "3: media"
+for_window [class="smplayer"] move container to workspace "3: media"
+for_window [class="Smplayer"] move container to workspace "3: media"
+for_window [class="Vlc"] move container to workspace "3: media"
+for_window [class="Clementine"] move container to workspace "3: media"
+for_window [class="mplayer2"] move container to workspace "3: media"
+
+for_window [class="Doublecmd"] move container to workspace "4: file"
+for_window [class="Spacefm"] move container to workspace "4: file"
+for_window [class="Thunar"] move container to workspace "4: file"
+
+for_window [class="Mousepad"] move container to workspace "5: code"
+for_window [class="Subl3"] move container to workspace "5: code"
+for_window [class="Sublime_text"] move container to workspace "5: code"
+for_window [class="sublime_text"] move container to workspace "5: code"
+for_window [class="Eclipse"] move container to workspace "5: code"
+for_window [class="QtCreator"] move container to workspace "5: code"
+
+for_window [class="Fbreader"] move container to workspace "6: a"
+for_window [class="Gimp"] move container to workspace "6: a"
+for_window [class="libreoffice-writer"] move container to workspace "6: a"
+for_window [class="libreoffice-calc"] move container to workspace "6: a"
+for_window [class="VirtualBox"] move container to workspace "6: a"
+for_window [class="Homebank"] move container to workspace "6: a"
+for_window [class="homebank"] move container to workspace "6: a"
+
+for_window [class="Terminator"] move container to workspace "10: term", workspace "10: term", focus
+for_window [class="Xfce4-terminal"] move container to workspace "10: term", workspace "10: term", focus
+for_window [class="URxvt"] move container to workspace "10: term", workspace "10: term", focus
+for_window [class="urxvt"] move container to workspace "10: term", workspace "10: term", focus
+#--------------------------------------------------------------------------------------
