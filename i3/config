@@ -5,12 +5,7 @@ set $mod Mod4
 
 
 #--------------------------------------------------------------------------- font & app
-#font pango:monospace 8
-#font pango:DejaVu Sans Mono 8
-#font pango:Cantarell 9
-#font pango:Terminus 9.5
 font pango:Terminus Re33 Bold 10.5
-#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 new_window none
 new_float pixel 2
@@ -33,17 +28,11 @@ floating_modifier $mod
 
 #---------------------------------------------------------------------------- shortcuts
 bindsym $mod+Return exec i3-sensible-terminal
-#bindsym $mod+Return exec xfce4-terminal --hide-menubar
 
 bindsym $mod+Shift+q kill
 
-#bindsym $mod+d exec dmenu_run -fn '7x14' -nb "#272822" -sb "#272822" -nf "#FFFFFF" -sf "#FD971F"
 bindsym $mod+d exec rofi -show run -font "Terminus Re33 Bold 11" -fg "#FFFFFF" -bg "#000000" -hlfg "#000000" -hlbg "#A6E22E" -bc "#A6E22E" -hide-scrollbar -o 85
 
-#bindsym $mod+j focus left
-#bindsym $mod+k focus down
-#bindsym $mod+l focus up
-#bindsym $mod+semicolon focus right
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -71,9 +60,6 @@ bindsym $mod+Shift+space floating toggle
 
 bindsym $mod+space focus mode_toggle
 
-#bindsym $mod+a focus parent
-#bindsym $mod+d focus child
-
 bindsym $mod+Shift+c reload
 
 bindsym $mod+Shift+r restart
@@ -84,7 +70,6 @@ bindsym $mod+r mode "resize"
 
 bindsym $mod+t border toggle
 
-#bindsym $mod+l exec /home/sultanbaev/.i3/i3lock.sh
 bindsym $mod+l exec blurlock
 
 bindsym --release Print exec scrot /home/sultanbaev/Dropbox/_Documents/_Shot/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
@@ -93,10 +78,6 @@ bindsym --release Shift+Print exec scrot -s /home/sultanbaev/Dropbox/_Documents/
 #arch
 bindsym F12 exec amixer -q set Master 1dB+ unmute
 bindsym F11 exec amixer -q set Master 1dB- unmute
-
-#debian
-#bindsym F12 exec --no-startup-id pactl set-sink-volume 0 -- +5% && killall -SIGUSR1 i3status
-#bindsym F11 exec --no-startup-id pactl set-sink-volume 0 -- -5% && killall -SIGUSR1 i3status
 #--------------------------------------------------------------------------------------
 
 
@@ -160,11 +141,6 @@ mode "resize" {
 
 #---------------------------------------------------------------------------------- bar
 bar {
-        #status_command i3status --config ~/.i3/i3status.conf
-        #tray_output none
-        #status_command /home/sultanbaev/.i3/i3conky.bash
-        #status_command conky -c ~/.i3/conky
-        #status_command i3status
         status_command conky -c /home/sultanbaev/.i3/conky_bar
         separator_symbol "-"
 
@@ -172,7 +148,6 @@ bar {
         colors {
                    background           #272822
                    statusline           #75715E
-                   #separator            #666666
 
                    focused_workspace    #272822   #272822   #FD971F
                    inactive_workspace   #272822   #272822   #75715E
@@ -185,44 +160,15 @@ bar {
 
 
 #---------------------------------------------------------------------------- autostart
-#exec dropbox /usr/bin/dropbox start -i
-#exec ~/.dropbox-dist/dropboxd
 exec dropbox
 
-#exec xpad & iceweasel & dc & vkaudiosaver
-#exec iceweasel & spacefm
-#exec iceweasel & dddd & bbbb
 exec palemoon & dddd
 
-#exec --no-startup-id feh --bg-scale ~/wl.png
 exec --no-startup-id feh --randomize --bg-scale /home/sultanbaev/Dropbox/_Documents/_Arch/*
 
 exec setxkbmap "us,ru" ",winkeys" "grp:alt_shift_toggle" "grp_led:scroll" "compose:rwin"
 
-#exec x11vnc -rfbauth /home/sultanbaev/.vnc/passwd -forever -noipv6 -display :0
-#exec x11vnc -rfbauth /home/sultanbaev/.x11vnc/passwd -forever -6 -display :0
-
-#exec xrandr --output LVDS1 --mode 1280x800 --left-of VGA1
-#exec xrandr --output VGA1 --mode 1280x1024 --right-of LVDS1
-
-#exec conky -c ~/.i3/tips
 exec guake
-#exec pidgin
-#exec go-for-it
-
-#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-#exec --no-startup-id nitrogen --restore
-#exec --no-startup-id nm-applet
-#exec --no-startup-id volumeicon
-#exec --no-startup-id xfce4-power-manager
-#exec --no-startup-id pamac-tray
-#exec --no-startup-id clipit
-# exec --no-startup-id blueman
-# exec_always --no-startup-id sbxkb
-#exec --no-startup-id compton -b
-# exec --no-startup-id start_conky_grey
-#exec --no-startup-id start_conky_green
-#exec --no-startup-id xautolock -time 1 -locker blurlock
 #--------------------------------------------------------------------------------------
 
 
@@ -232,7 +178,6 @@ exec guake
 for_window [class="Yakuake"] floating enabled
 for_window [class="Main.py"] floating enabled
 for_window [class="Pavucontrol"] floating enable
-#for_window [class=""] floating enable
 for_window [class="Lxappearance"] floating enable
 for_window [class="Qtconfig-qt4"] floating enable
 

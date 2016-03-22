@@ -8,9 +8,6 @@ default_color 888888
 color2 FD971F
 color3 AE81FF
 
-#lua_load ~/.i3/wind_speed.lua
-#lua_load ~/.i3/pressure.lua
-
 TEXT
 
 ${exec bash ~/.i3/deadbeef.sh}$uptime ::: ${cpu cpu0}% ${exec sensors | grep 'Core 0:' | cut -c18-19}'C ::: ${mem} ::: ${fs_free /} ::: ${execpi 120 python ~/.i3/gmail.py} ::: ${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ UNNT temperature}'C ::: ${time %H:%M} :::
