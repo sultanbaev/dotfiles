@@ -1,6 +1,6 @@
 #!/bin/sh
 
-art_title = 'deadbeef --nowplaying "%a - %t"'
+art_title = '/home/sultanbaev/Dropbox/_Programs/Progs_w_deb/DeadBeef64/deadbeef --nowplaying "%a - %t"'
 
 #while [ "$(deadbeef --nowplaying "%a - %t")" != "nothing" ]
 #do
@@ -8,7 +8,7 @@ art_title = 'deadbeef --nowplaying "%a - %t"'
 #done
 
 if [ "$(art_title)" != 'nothing' ]; then
-        echo "$(deadbeef --nowplaying "%a - %t")" "::: "
+        echo "$(/home/sultanbaev/Dropbox/_Programs/Progs_w_deb/DeadBeef64/deadbeef --nowplaying "%a - %t")" "::: "
         #echo "$a" "::: "
         else echo " "
 fi

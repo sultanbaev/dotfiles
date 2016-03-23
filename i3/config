@@ -76,8 +76,8 @@ bindsym --release Print exec scrot /home/sultanbaev/Dropbox/_Documents/_Shot/scr
 bindsym --release Shift+Print exec scrot -s /home/sultanbaev/Dropbox/_Documents/_Shot/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
 
 #arch
-bindsym F12 exec amixer -q set Master 1dB+ unmute
-bindsym F11 exec amixer -q set Master 1dB- unmute
+bindsym F12 exec amixer -c 0 set Master 4dB+
+bindsym F11 exec amixer -c 0 set Master 4dB-
 #--------------------------------------------------------------------------------------
 
 
@@ -141,7 +141,7 @@ mode "resize" {
 
 #---------------------------------------------------------------------------------- bar
 bar {
-        status_command conky -c /home/sultanbaev/.i3/conky_bar
+        status_command conky -c /home/sultanbaev/.config/i3/conky_bar
         separator_symbol "-"
 
         
