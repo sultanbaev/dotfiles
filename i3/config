@@ -72,12 +72,12 @@ bindsym $mod+t border toggle
 
 bindsym $mod+l exec blurlock
 
-bindsym --release Print exec scrot /home/sultanbaev/Dropbox/_Documents/_Shot/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
-bindsym --release Shift+Print exec scrot -s /home/sultanbaev/Dropbox/_Documents/_Shot/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
+bindsym --release Print exec "scrot /home/sultanbaev/Dropbox/_Documents/_Shot/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png && mplayer /home/sultanbaev/.config/i3/camera-shutter.oga"
+bindsym --release Shift+Print exec "scrot -s /home/sultanbaev/Dropbox/_Documents/_Shot/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png  && mplayer /home/sultanbaev/.config/i3/camera-shutter.oga"
 
 #arch
-bindsym F12 exec amixer -c 0 set Master 4dB+
-bindsym F11 exec amixer -c 0 set Master 4dB-
+bindsym F12 exec "amixer -c 0 set Master 2dB+ && mplayer /home/sultanbaev/.config/i3/bell.oga"
+bindsym F11 exec "amixer -c 0 set Master 2dB- && mplayer /home/sultanbaev/.config/i3/bell.oga"
 #--------------------------------------------------------------------------------------
 
 
@@ -160,15 +160,19 @@ bar {
 
 
 #---------------------------------------------------------------------------- autostart
-exec dropbox
+exec --no-startup-id dropbox
 
-exec palemoon & dddd
+exec --no-startup-id palemoon & dddd
 
 exec --no-startup-id feh --randomize --bg-scale /home/sultanbaev/Dropbox/_Documents/_Arch/*
 
-exec setxkbmap "us,ru" ",winkeys" "grp:alt_shift_toggle" "grp_led:scroll" "compose:rwin"
+exec --no-startup-id setxkbmap "us,ru" ",winkeys" "grp:alt_shift_toggle" "grp_led:scroll" "compose:rwin"
 
-exec guake
+exec --no-startup-id guake
+
+exec --no-startup-id conky -c /home/sultanbaev/.config/i3/conky_trash
+
+exec --no-startup-id mplayer /home/sultanbaev/.config/i3/service-login.oga
 #--------------------------------------------------------------------------------------
 
 
