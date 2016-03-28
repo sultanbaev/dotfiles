@@ -1,0 +1,38 @@
+#!/bin/bash
+
+echo "WHAT DO YOU WANT TO DO?"
+echo ""
+echo "1. shutdown"
+echo "2. restart"
+echo "3. suspend"
+echo "4. hibernate"
+echo ""
+read doing
+
+case $doing in
+
+	1)
+		shutdown
+	;;
+
+	2)
+		restart
+	;;
+
+	3)
+		pm-suspend
+	;;
+
+	4)
+		pm-hibernate
+	;;
+
+	5)
+		exit 0
+	;;
+
+*)
+echo ""
+echo "WRONG NUMBER!"
+
+esac

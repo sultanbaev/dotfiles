@@ -64,8 +64,6 @@ bindsym $mod+Shift+c reload
 
 bindsym $mod+Shift+r restart
 
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
 bindsym $mod+r mode "resize"
 
 bindsym $mod+t border toggle
@@ -160,33 +158,31 @@ bar {
 
 
 #---------------------------------------------------------------------------- autostart
-exec --no-startup-id dropbox
-
-exec --no-startup-id palemoon & dddd
-
-exec --no-startup-id feh --randomize --bg-scale /home/sultanbaev/Dropbox/_Documents/_Arch/*
-
-exec --no-startup-id setxkbmap "us,ru" ",winkeys" "grp:alt_shift_toggle" "grp_led:scroll" "compose:rwin"
 
 exec --no-startup-id guake
 
-exec --no-startup-id conky -c /home/sultanbaev/.config/i3/conky_trash
+exec --no-startup-id setxkbmap "us,ru" ",winkeys" "grp:alt_shift_toggle" "grp_led:scroll" "compose:rwin"
 
 exec --no-startup-id mplayer /home/sultanbaev/.config/i3/service-login.oga
+
+exec --no-startup-id dddd
+
+exec --no-startup-id palemoon
+
+exec --no-startup-id feh --randomize --bg-scale /home/sultanbaev/Dropbox/_Documents/_Arch/*
+
+exec --no-startup-id dropbox
+
+exec --no-startup-id conky -c /home/sultanbaev/.config/i3/conky_trash
+
 #--------------------------------------------------------------------------------------
 
 
 
 
 #---------------------------------------------------------------- xprop | grep WM_CLASS
-for_window [class="Yakuake"] floating enabled
-for_window [class="Main.py"] floating enabled
-for_window [class="Pavucontrol"] floating enable
 for_window [class="Lxappearance"] floating enable
-for_window [class="Qtconfig-qt4"] floating enable
 
-
-for_window [class="xpad"] floating enabled, move container to workspace "1: main"
 for_window [class="Transmission-gtk"] floating enabled, move container to workspace "1: main"
 for_window [class="transmission-gtk"] floating enabled, move container to workspace "1: main"
 for_window [class="Skype"] floating enable, move container to workspace "1: main"
@@ -198,34 +194,20 @@ for_window [class="Go-for-it"] floating enabled, move container to workspace "1:
 for_window [class="Firefox"] move container to workspace "2: web"
 for_window [class="Chromium-browser"] move container to workspace "2: web"
 for_window [class="Chromium"] move container to workspace "2: web"
-for_window [class="Dillo"] move container to workspace "2: web"
 for_window [class="Google-chrome-stable"] move container to workspace "2: web"
 for_window [class="google-chrome"] move container to workspace "2: web"
-for_window [class="Midori"] move container to workspace "2: web"
-for_window [class="Iceweasel"] move container to workspace "2: web"
-for_window [class="Navigator"] move container to workspace "2: web"
 for_window [class="Pale moon"] move container to workspace "2: web"
 
 for_window [class="Vkaudiosaver"] move container to workspace "3: media"
 for_window [class="Deadbeef"] move container to workspace "3: media"
-for_window [class="smplayer"] move container to workspace "3: media"
-for_window [class="Smplayer"] move container to workspace "3: media"
-for_window [class="Vlc"] move container to workspace "3: media"
-for_window [class="Clementine"] move container to workspace "3: media"
-for_window [class="mplayer2"] move container to workspace "3: media"
+for_window [class="mplayer"] move container to workspace "3: media"
 
 for_window [class="Doublecmd"] move container to workspace "4: file"
-for_window [class="Spacefm"] move container to workspace "4: file"
-for_window [class="Thunar"] move container to workspace "4: file"
 
-for_window [class="Mousepad"] move container to workspace "5: code"
 for_window [class="Subl3"] move container to workspace "5: code"
 for_window [class="Sublime_text"] move container to workspace "5: code"
 for_window [class="sublime_text"] move container to workspace "5: code"
-for_window [class="Eclipse"] move container to workspace "5: code"
-for_window [class="QtCreator"] move container to workspace "5: code"
 
-for_window [class="Fbreader"] move container to workspace "6: a"
 for_window [class="Gimp"] move container to workspace "6: a"
 for_window [class="libreoffice-writer"] move container to workspace "6: a"
 for_window [class="libreoffice-calc"] move container to workspace "6: a"
@@ -233,8 +215,6 @@ for_window [class="VirtualBox"] move container to workspace "6: a"
 for_window [class="Homebank"] move container to workspace "6: a"
 for_window [class="homebank"] move container to workspace "6: a"
 
-for_window [class="Terminator"] move container to workspace "10: term", workspace "10: term", focus
-for_window [class="Xfce4-terminal"] move container to workspace "10: term", workspace "10: term", focus
 for_window [class="URxvt"] move container to workspace "10: term", workspace "10: term", focus
 for_window [class="urxvt"] move container to workspace "10: term", workspace "10: term", focus
 #--------------------------------------------------------------------------------------
