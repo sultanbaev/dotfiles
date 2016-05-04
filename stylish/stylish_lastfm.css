@@ -1,0 +1,661 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+.features-promoted,
+.footer-wrapper,
+.col-xs-2,
+.copyright.col-xs-12,
+div.feedback-message,
+.deferred.loading-indicator,
+.LastAd,
+.LastAd *,
+#LastAd_leaderboard{
+display:none!important;
+}
+#forumsearch input,
+.date-range-picker-form .form-group-controls input{
+background:#141414!important;
+}
+#page .sic #content,
+.fiflufi #content,
+.fiflufi #content .fullWidth,
+.site-footer .separator,
+article.content,
+body:not(.dashbody) .kerve.widget{
+border-color:#323232!important;
+}
+.actions-bar,
+.add-event-btn,
+.alert,
+.btn-add,
+.btn-secondary,
+.content-form .form-control,
+.content-form input,
+.content-form select,
+.content-form textarea,
+.dropdown-buylinks .dropdown-featured-buylink,
+.dropdown-buylinks .dropdown-more-buylinks,
+.gallery-image-vote-down-on,
+.gallery-image-vote-up-on,
+.kerve.widget,
+.selectboxit-options,
+.shout-btn{
+border-radius:0!important;
+}
+.alert-danger{
+background-color:#592929!important;
+}
+.attendance-btn{
+background-color:#323232!important;
+border:none!important;
+border-radius:0!important;
+padding:7px 15px!important;
+}
+.attendance-btn:hover{
+background-color:#505050!important;
+border-radius:0!important;
+padding:7px 15px!important;
+}
+.btn--header,
+.btn--header:focus{
+background-color:transparent!important;
+background-image:none!important;
+border-radius:0!important;
+}
+.btn--header:hover{
+background-color:rgba(30,
+30,
+30,
+.2)!important;
+background-image:none!important;
+border-radius:0!important;
+}
+.btn-add-sm{
+border-radius:0!important;
+color:#FFFFFF!important;
+}
+.btn-primary{
+border-radius:0!important;
+padding:6px 13px!important;
+}
+.btn.btn--header,
+.chartlist td,
+.events-filters,
+.events-list td,
+.globalchart .globalchart-item,
+.inbox td,
+.recs-feed .recs-feed-item,
+.site-links{
+box-shadow:none!important;
+}
+.btn_trendnav_month,
+.btn_trendnav_week,
+.trendglobal{
+color:#000000!important;
+}
+.buylinks-dropdown-menu{
+background:#323232!important;
+border:1px solid #505050!important;
+border-radius:0!important;
+padding:0!important;
+}
+.buylinks-dropdown-menu .buylink:focus,
+.buylinks-dropdown-menu .buylink:hover,
+.comments .shout-btn:hover,
+.dropdown-buylinks--light .dropdown-featured-buylink:hover,
+.dropdown-buylinks--light .dropdown-more-buylinks:hover,
+.gallery-image-vote-down-off:hover,
+.gallery-image-vote-up-off:hover{
+background-color:#505050!important;
+}
+.chartlist .chartlist-album,
+.chartlist .chartlist-name,
+.dashbody .kerve .wave_fade,
+.secondary-nav--scrollable .secondary-nav-item-link--active,
+body::before,
+div.infoMessage span.messageWrapper,
+div.infoMessageBlock{
+background:none!important;
+}
+.chartlist .chartlist-delete-button:focus::before,
+.chartlist .chartlist-delete-button:hover::before,
+.chartlist .chartlist-play-button:focus::before,
+.chartlist .chartlist-play-button:hover::before,
+.stationlink:focus::before,
+.stationlink:hover::before{
+-webkit-filter:saturate(0%) brightness(140%)!important;
+background-position:-6px -6px;
+filter:saturate(0%) brightness(140%)!important;
+}
+.chartlist .countbar-bar{
+margin-bottom:0!important;
+padding-bottom:1px!important;
+}
+.chartlist .countbar-bar-value,
+.grid-items-cover-image a{
+color:#FFFFFF!important;
+}
+.chartlist tr{
+background-color:transparent!important;
+padding:9px 62px 1px 85px!important;
+}
+.chartlist--with-buylinks .lazy-buylinks-toggle:focus::after,
+.chartlist--with-buylinks .lazy-buylinks-toggle:hover::after{
+background-position:0 -16px;
+}
+.chartlist-timestamp,
+.header-info-secondary,
+.header-metadata-global-stats,
+.masthead-nav-links a,
+.selectboxit-text,
+th.metadata-title{
+color:#999999!important;
+}
+.chartlist.chartlist--no-compact-image.chartlist--no-big-image tr{
+padding-left:48px!important;
+}
+.comments .shout-btn{
+background-color:#323232!important;
+border:none!important;
+}
+.content-top-lower:after,
+.content-top:after,
+.header-metadata-user-stats,
+.overlay-control-bar,
+.overlay-control-bar::after,
+div.overlay-content{
+border:none!important;
+}
+.context{
+background:#000000!important;
+box-shadow:none!important;
+}
+.dashbody .kerve .venn_mask{
+background-image:url(http://i.imgur.com/ety944K.png)!important;
+}
+.dashbody .kerve .worldwrap{
+margin:0;
+}
+.date-range-picker-content,
+.dropdown-menu.dropdown--open{
+border:1px solid rgba(102,
+102,
+102,
+.3)!important;
+border-radius:0!important;
+box-shadow:none!important;
+padding:0!important;
+}
+.date-range-picker-form{
+border-top:1px solid rgba(102,
+102,
+102,
+.3)!important;
+}
+.date-range-picker-preset a:focus,
+.date-range-picker-preset a:hover,
+.fluid-container,
+.inbox-message--unviewed,
+.selectboxit-option a:hover,
+div.overlay-side-rail{
+background:#323232!important;
+}
+.dropdown-buylinks--light .dropdown-featured-buylink,
+.dropdown-buylinks--light .dropdown-more-buylinks{
+background-color:#323232!important;
+box-shadow:none!important;
+}
+.dropdown-buylinks--light .dropdown-more-buylink:focus::before,
+.dropdown-buylinks--light .dropdown-more-buylinks:hover::before{
+-webkit-filter:saturate(0%) brightness(1000%)!important;
+filter:saturate(0%) brightness(600%)!important;
+}
+.dropdown-buylinks--light .dropdown-more-buylinks::before{
+-webkit-filter:saturate(0%) brightness(300%)!important;
+filter:saturate(0%) brightness(300%)!important;
+}
+.dropdown-hoverable .dropdown-menu-hoverable-item:hover,
+.secondary-nav--scrollable.secondary-nav--more ul.secondary-nav-hidden-list a:hover{
+background-color:#323232!important;
+}
+.events-list .events-list-item,
+.inbox-buttons{
+border-bottom:1px solid #323232!important;
+}
+.follower-btn{
+color:#666666!important;
+}
+.gallery-image-vote-down-off,
+.gallery-image-vote-up-off{
+background-color:#323232!important;
+border:none!important;
+border-radius:0!important;
+}
+.gallery-next,
+.gallery-previous{
+opacity:0!important;
+}
+.gallery-next:hover,
+.gallery-previous:hover{
+opacity:1!important;
+}
+.gallery-upload-rules{
+background-color:#282828!important;
+border:none!important;
+border-radius:0!important;
+}
+.header * + .attendance-control::before,
+.header * + .header-metadata-user-stats::before,
+.header * + .tasteometer::before,
+.section-with-control .section-settings-toggle{
+border-left:1px solid #323232!important;
+}
+.header.header--with-avatar.header--overview .secondary-nav{
+bottom:-5px!important;
+}
+.highcharts-container{
+-webkit-filter:invert(88.2%) saturate(0%)!important;
+filter:invert(88.2%) saturate(0%)!important;
+}
+.js .date-range-picker-button .date-range-picker-button-inner::before,
+.js .date-range-picker-button::before,
+.kerve .nowleft:hover,
+.kerve .nowright:hover,
+.kerve .trendleft:hover,
+.kerve .trendright:hover,
+.library-controls .secondary-nav-item--albums .secondary-nav-item-link.secondary-nav-item-link--active::before,
+.library-controls .secondary-nav-item--albums .secondary-nav-item-link:focus::before,
+.library-controls .secondary-nav-item--albums .secondary-nav-item-link:hover::before,
+.library-controls .secondary-nav-item--artists .secondary-nav-item-link.secondary-nav-item-link--active::before,
+.library-controls .secondary-nav-item--artists .secondary-nav-item-link:focus::before,
+.library-controls .secondary-nav-item--artists .secondary-nav-item-link:hover::before,
+.library-controls .secondary-nav-item--overview .secondary-nav-item-link.secondary-nav-item-link--active::before,
+.library-controls .secondary-nav-item--overview .secondary-nav-item-link:focus::before,
+.library-controls .secondary-nav-item--overview .secondary-nav-item-link:hover::before,
+.library-controls .secondary-nav-item--tracks .secondary-nav-item-link.secondary-nav-item-link--active::before,
+.library-controls .secondary-nav-item--tracks .secondary-nav-item-link:focus::before,
+.library-controls .secondary-nav-item--tracks .secondary-nav-item-link:hover::before,
+.love-button:hover,
+.masthead-logo,
+.tags-add:hover::before{
+-webkit-filter:saturate(0%) brightness(600%)!important;
+filter:saturate(0%) brightness(600%)!important;
+}
+.kerve .genretodayitem0 .genretodaybar{
+border-right:4px solid #B90000;
+}
+.kerve .genretodayitem1 .genretodaybar{
+border-right:4px solid #A21F28;
+}
+.kerve .genretodayitem2 .genretodaybar{
+border-right:4px solid #8B3F4F;
+}
+.kerve .genretodayitem3 .genretodaybar{
+border-right:4px solid #735E77;
+}
+.kerve .genretodayitem4 .genretodaybar{
+border-right:4px solid #5C7D9E;
+}
+.kerve .nowleft,
+.kerve .trendleft{
+-webkit-filter:saturate(0%)!important;
+background-position:0 -50px;
+filter:saturate(0%)!important;
+}
+.kerve .nowright,
+.kerve .trendright{
+-webkit-filter:saturate(0%)!important;
+background-position:-30px -50px;
+filter:saturate(0%)!important;
+}
+.kerve .trendglobal{
+background:#323232!important;
+border-left:none!important;
+}
+.kerve .venn2 .handle_hover{
+opacity:.25!important;
+}
+.kerve .vennname2{
+border-bottom:1px solid #5C7D9E!important;
+}
+.kerve a.btn_trendnav{
+background:#323232!important;
+border-radius:0!important;
+}
+.label{
+border-radius:0!important;
+font-weight:600!important;
+}
+.lfmRed .site-search .search-box{
+border:1px solid rgba(102,102,102,.3)!important;
+border-radius:0!important;
+box-shadow:none!important;
+}
+.library-controls-datepicker{
+border-style:none!important;
+}
+.love-button,
+.pagination .next a::before,
+.tags-add::before{
+-webkit-filter:saturate(0%) brightness(140%)!important;
+filter:saturate(0%) brightness(140%)!important;
+}
+.masthead-wrapper .masthead{
+background-image:none!important;
+border:none!important;
+box-shadow:none!important;
+}
+.page-head .crumb-wrapper h1,
+.wiki-legal,
+ul.forumComments div.comment div.messageSig{
+border-top:1px solid #323232!important;
+}
+.pagination a,
+.widget_listeningnow,
+.widget_trends,
+div.sic #content,
+span.quote{
+border:1px solid #323232!important;
+}
+.pagination a.nextlink,
+.pagination a.nextlink:hover{
+background:none!important;
+padding-right:5px!important;
+}
+.pagination a:hover{
+background:#323232!important;
+border-color:#3C3C3C!important;
+}
+.search-field{
+background:none!important;
+border:none!important;
+border-radius:0!important;
+}
+.secondary-nav--scrollable,
+ul.journalsSmall{
+border-bottom:none!important;
+}
+.secondary-nav--scrollable.secondary-nav--more .secondary-nav-hidden-list{
+margin-left:-6px!important;
+}
+.secondary-nav--scrollable.secondary-nav--more ul.secondary-nav-hidden-list{
+border:1px solid rgba(102,
+102,
+102,
+.3)!important;
+border-radius:0!important;
+box-shadow:none!important;
+margin-top:12px!important;
+padding:0!important;
+}
+.section-settings{
+background:#141414!important;
+border:1px solid #323232!important;
+}
+.section-settings-toggle::before,
+.selectbox .selectboxit-text::before,
+.stationlink::before{
+-webkit-filter:invert(88.2%) saturate(0%)!important;
+filter:invert(88.2%) saturate(0%)!important;
+opacity:.7!important;
+}
+.selectbox .selectboxit-options{
+background:#141414!important;
+border:1px solid #323232!important;
+padding:0!important;
+}
+.site-footer{
+text-shadow:none!important;
+}
+.stationbuttonLarge{
+padding-left:0!important;
+}
+.stationlink-list .btn:focus,
+.stationlink-list .btn:hover,
+h2 a:focus,
+h2 a:hover{
+text-decoration:none;
+}
+.tag-cta,
+.tag-cta:hover,
+.upload-artwork-cta,
+.upload-artwork-cta:hover,
+.upload-image-cta,
+.upload-image-cta:hover,
+.upload-video-cta,
+.upload-video-cta:hover,
+.wiki-cta,
+.wiki-cta:hover{
+background:#282828!important;
+border:1px solid #323232!important;
+}
+a.button,
+a.confirmButton,
+button.button,
+button.confirmButton,
+input.button,
+input.confirmButton{
+background:#323232!important;
+border-color:#323232!important;
+text-shadow:none!important;
+}
+a.button:hover,
+a.confirmButton:hover,
+button.button:hover,
+button.confirmButton:hover,
+input.button:hover,
+input.confirmButton:hover{
+background:#3C3C3C!important;
+border-color:#3C3C3C!important;
+}
+input,
+select,
+textarea{
+background:#000000!important;
+border:1px solid #323232!important;
+}
+table.forumtable .end,
+table.forumtable .lastPost{
+border-right:none!important;
+}
+table.forumtable td{
+border-bottom:none!important;
+border-right:1px solid #323232!important;
+border-top:1px solid #323232!important;
+}
+ul.forumComments li.odd{
+border-bottom:1px solid #323232!important;
+border-top:1px solid #323232!important;
+}
+ul.journalsSmall li{
+border-bottom:none!important;
+border-top:1px solid #323232!important;
+}
+/*.header-background--has-image,*/
+.kerve .trendleft,
+.kerve .trendright,
+.kerve .nowleft,
+.kerve .nowright{
+filter:saturate(0%)!important;
+-webkit-filter:saturate(0%)!important;
+}
+/* Custom */
+.add-event-btn,
+.btn-add-sm,
+.btn-primary,
+.content-top .secondary-nav .secondary-nav-item-link--active::after,
+.content-top .secondary-nav a.secondary-nav-item-link:focus::after,
+.content-top .secondary-nav a.secondary-nav-item-link:hover::after,
+.countbar-bar-slug,
+.header .secondary-nav-item-link--active::after,
+.header a.secondary-nav-item-link:focus::after,
+.header a.secondary-nav-item-link:hover::after,
+.homefeed .secondary-nav-item-link--active::after,
+.homefeed a.secondary-nav-item-link:focus::after,
+.homefeed a.secondary-nav-item-link:hover::after,
+.kerve .trenduser,
+.kerve a.btn_trendnav.current,
+.dashbody .kerve .wave .track,
+.kerve .venn2 .handle_hover,
+.masthead-wrapper .masthead,
+.whats-new .secondary-nav .secondary-nav-item-link--active::after,
+.whats-new .secondary-nav a.secondary-nav-item-link:focus::after,
+.whats-new .secondary-nav a.secondary-nav-item-link:hover::after,
+.whats-new .secondary-nav-item-link--active::after,
+.whats-new a.secondary-nav-item-link:focus::after,
+.whats-new a.secondary-nav-item-link:hover::after,
+.label,
+.calendar-icon .calendar-icon-month,
+.btn-add{
+background:#5C809E!important;
+}
+.player-bar .player-bar-progress{
+background:#282828!important;
+}
+.player-bar .player-bar-progress-slug{
+background:#5C809E!important;
+}
+.add-event-btn:hover,
+.btn-add:hover,
+.btn-add-sm:hover,
+.btn-primary:hover{
+background:#779ABD!important;
+}
+#adSkinLeft,
+#adSkinRight,
+.chartlist td,
+.container.page-content,
+.content-top,
+.content-top-lower,
+.date-range-picker-content,
+.dropdown-menu.dropdown--open ,.dropdown-menu.dropdown--open,
+.footer-wrapper,
+.gallery-image-container,
+.header .header-info-secondary:before,
+.img-thumbnail,
+.large-header-layout .header.header--overview,
+.library-controls-datepicker,
+.overlay-content,
+.player-bar,
+.secondary-nav--scrollable.secondary-nav--more ul.secondary-nav-hidden-list,
+.secondary-nav-item-link--active,
+.selectboxit-option-anchor,
+.top-bar,
+.widget_listeningnow,
+.widget_trends,
+body,
+.header--overview,
+textarea.comment-input,
+tr.js-link-block,
+.recs-feed .recs-feed-item,
+.date-range-picker-content,
+.lfmRed .site-search .search-box,
+.fiflufi .leftCol,
+.stationbuttonLarge,
+.stationbuttonLarge span.stationButtonWrapper,
+#page .sic #content,
+.fiflufi #content .fullWidth,
+.fiflufi #content,
+article.content,
+.fiflufi #content .clearit,
+.fiflufi .LeftCol,
+span.quote,
+.site-footer,
+ul.forumComments li.odd,
+table.forumtable tr.alt td,
+.actions-bar,
+#forumsearch,
+body:not(.dashbody) .kerve.widget,
+.header--sub-page .container, .header--overview .container{
+background:#1E1E1E!important;
+}
+.kerve .trendwavewrap .bar,
+.kerve .trendbarwrap .graph_global .bar{
+background:#323232;
+}
+.kerve .trendwave_inner .bar,
+.kerve .trendbarwrap .bar{
+background:#5C809E;
+}
+.kerve .venn2{
+border:2px solid #5C809E;
+}
+.kerve .venn2 .handle{
+border:3px solid #5C809E;
+}
+.buylink-list li,
+.chartlist tr,
+.stationlink-list li{
+box-shadow:0px -1px #323232 inset!important;
+}
+.buylink-list{
+box-shadow:0px 1px #323232 inset!important;
+}
+.metacritic-score{
+color:#1E1E1E!important;
+}
+.stationlink-list .btn,
+div.username,
+h2 a,
+h2,
+.js .date-range-picker-button,
+.kerve .vennname2,
+.kerve .trendwrap .axis_y1_label,
+.kerve .trendwrap .axis_y1_label2,
+.events-list-sidebar .events-list-item-date,
+.mimic-link,
+.chartlist--with-buylinks .lazy-buylinks-toggle:hover,
+.gallery-upload-rules{
+color:#5C809E!important;
+}
+h2 a:hover,
+.stationlink-list .btn:hover,
+.events-list-sidebar .events-list-item-date:hover,
+.mimic-link:hover,
+.chartlist--with-buylinks .lazy-buylinks-toggle:focus{
+color:#779ABD!important;
+}
+.countbar-bar-value,
+.hidden-xs.header-scrobble-since,
+.masthead .masthead-nav-links a:hover,
+.next,
+.player-bar,
+.previous,
+a,
+button.btn-primary,
+input,
+li.pages,
+select,
+textarea,
+.kerve a.btn_trendnav,
+.kerve .trendglobal,
+h1,
+.h1,
+ul.journalsSmall a strong,
+ul.forumComments div.comment h4,
+.current-language strong,
+.chartlist-index,
+.comment-text.clearfix,
+.gallery-image-vote-down,
+.gallery-image-vote-up,
+.metadata-display,
+.nowslider_scrobbles,
+.overlay-control-bar-title,
+body,
+p,
+textarea.comment-input,
+.label{
+color:#CCCCCC!important;
+}
+.share-desktop,
+.share-mobile{
+display:none!important;
+}
+.stationlinks,
+.buylinks{
+margin-top:0px;
+}
+
+@media (min-width:768px){
+.about-me-sidebar{
+margin-bottom:15px!important;
+}
+}

@@ -16,7 +16,7 @@ case $doing in
 	;;
 
 	2)
-		restart
+		reboot
 	;;
 
 	3)

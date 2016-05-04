@@ -1,0 +1,88 @@
+{
+  "timeStamp": 1462404132583,
+  "version": "1.7.2",
+  "userSettings": {
+    "advancedUserEnabled": false,
+    "autoUpdate": true,
+    "cloudStorageEnabled": false,
+    "collapseBlocked": true,
+    "colorBlindFriendly": false,
+    "contextMenuEnabled": true,
+    "dynamicFilteringEnabled": true,
+    "experimentalEnabled": false,
+    "externalLists": "! Examples:\n! https://easylist-downloads.adblockplus.org/fb_annoyances_full.txt\n! https://easylist-downloads.adblockplus.org/yt_annoyances_full.txt\n",
+    "firewallPaneMinimized": true,
+    "hyperlinkAuditingDisabled": true,
+    "largeMediaSize": 50,
+    "parseAllABPHideFilters": true,
+    "prefetchingDisabled": true,
+    "requestLogMaxEntries": 1000,
+    "showIconBadge": true,
+    "tooltipsDisabled": false,
+    "webrtcIPAddressHidden": false
+  },
+  "filterLists": {
+    "assets/thirdparties/easylist-downloads.adblockplus.org/easylist.txt": {
+      "entryCount": 63712,
+      "entryUsedCount": 63673,
+      "group": "ads",
+      "homeURL": "https://easylist-downloads.adblockplus.org/easylist.txt",
+      "off": false,
+      "supportURL": "https://forums.lanik.us/",
+      "title": "EasyList"
+    },
+    "assets/thirdparties/easylist-downloads.adblockplus.org/easyprivacy.txt": {
+      "entryCount": 11460,
+      "entryUsedCount": 11424,
+      "group": "privacy",
+      "homeURL": "https://easylist-downloads.adblockplus.org/easyprivacy.txt",
+      "off": false,
+      "supportURL": "https://forums.lanik.us/",
+      "title": "EasyPrivacy"
+    },
+    "assets/thirdparties/mirror1.malwaredomains.com/files/justdomains": {
+      "entryCount": 20850,
+      "entryUsedCount": 20609,
+      "group": "malware",
+      "homeURL": "https://mirror.cedia.org.ec/malwaredomains/justdomains",
+      "off": false,
+      "supportURL": "http://www.malwaredomains.com/",
+      "title": "Malware domains"
+    },
+    "assets/thirdparties/pgl.yoyo.org/as/serverlist": {
+      "entryCount": 2411,
+      "entryUsedCount": 2411,
+      "group": "ads",
+      "homeURL": "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=1&mimetype=plaintext",
+      "off": false,
+      "supportURL": "https://pgl.yoyo.org/adservers/",
+      "title": "Peter Lowe’s Ad server list"
+    },
+    "assets/thirdparties/www.malwaredomainlist.com/hostslist/hosts.txt": {
+      "entryCount": 1554,
+      "entryUsedCount": 1554,
+      "group": "malware",
+      "homeURL": "https://www.malwaredomainlist.com/hostslist/hosts.txt",
+      "off": false,
+      "title": "Malware Domain List"
+    },
+    "assets/ublock/experimental.txt": {
+      "group": "default",
+      "instructionURL": "https://github.com/gorhill/uBlock/wiki/Experimental-filters",
+      "off": true,
+      "supportURL": "https://github.com/gorhill/uBlock/wiki/Experimental-filters",
+      "title": "uBlock filters – Experimental"
+    },
+    "assets/user/filters.txt": {
+      "entryCount": 64,
+      "entryUsedCount": 64,
+      "group": "default",
+      "off": false
+    }
+  },
+  "netWhitelist": "about-scheme\nbehind-the-scene\nchrome-extension-scheme\nchrome-scheme\nloopconversation.about-scheme\nopera-scheme",
+  "dynamicFilteringString": "behind-the-scene * 3p-frame noop\nbehind-the-scene * 3p noop",
+  "urlFilteringString": "",
+  "hostnameSwitchesString": "",
+  "userFilters": "! 3/28/2016, 7:44:49 AM https://tjournal.ru/25453-v-britanskih-kibervoiskah-razreshili-nosit-dlinnie-volosi-i-borodi\ntjournal.ru###seedr-player > .seedr-video-container > .seedr-video-click-link[href^=\"http://ad.adriver.ru/cgi-bin/click.cgi\"]\n\n! 3/28/2016, 7:44:55 AM https://tjournal.ru/25453-v-britanskih-kibervoiskah-razreshili-nosit-dlinnie-volosi-i-borodi\ntjournal.ru###seedr-player > .seedr-video-container > video\n\n! 3/28/2016, 7:44:59 AM https://tjournal.ru/25453-v-britanskih-kibervoiskah-razreshili-nosit-dlinnie-volosi-i-borodi\ntjournal.ru###seedr-player\n\n! 3/28/2016, 9:04:26 PM http://www.mekc.info/\nwww.mekc.info###gnezdo_ru_11000 > .gnezdo_main_block > .gnezdo_table\n\n! 3/28/2016, 9:04:31 PM http://www.mekc.info/\nwww.mekc.info###gnezdo_ru_11001 > .gnezdo_main_block > .gnezdo_table\n\n! 3/28/2016, 9:04:43 PM http://www.mekc.info/\nwww.mekc.info##.wrapper > .sl.sidebar\n\n! 3/28/2016, 9:04:54 PM http://www.mekc.info/\nwww.mekc.info##.wrapper > .right.sidebar:nth-of-type(4)\n\n! 3/28/2016, 9:05:11 PM http://www.mekc.info/\nwww.mekc.info###header\n\n! 3/28/2016, 9:05:46 PM http://www.mekc.info/\nwww.mekc.info##.block_nnews\n\n! 3/29/2016, 7:33:59 AM http://www.mekc.info/\nwww.mekc.info###polls-widget-4 > .wbody\n\n! 3/29/2016, 7:34:06 AM http://www.mekc.info/\nwww.mekc.info###polls-widget-4 > .top\n\n! 3/29/2016, 7:34:09 AM http://www.mekc.info/\nwww.mekc.info##.wrapper > .right.sidebar:nth-of-type(5) > .bottom-widget:nth-of-type(3)\n\n! 3/29/2016, 7:34:13 AM http://www.mekc.info/\nwww.mekc.info###wborder\n\n! 3/29/2016, 7:34:17 AM http://www.mekc.info/\nwww.mekc.info###pages-3 > .top\n\n! 3/29/2016, 7:34:21 AM http://www.mekc.info/\nwww.mekc.info###pages-3 > .wbody > ul > .page_item_has_children.page-item-3474.page_item > .children > .page_item_has_children.page-item-7798.page_item\n\n! 3/29/2016, 7:34:26 AM http://www.mekc.info/\nwww.mekc.info###pages-3 > .wbody > ul > .page_item_has_children.page-item-3474.page_item\n\n! 3/29/2016, 7:34:29 AM http://www.mekc.info/\nwww.mekc.info###pages-3 > .wbody > ul > .page_item_has_children.page-item-220.page_item\n\n! 3/29/2016, 7:34:35 AM http://www.mekc.info/\nwww.mekc.info###pages-3 > .wbody > ul > .page_item_has_children.page-item-7905.page_item\n\n! 3/29/2016, 7:34:44 AM http://www.mekc.info/\nwww.mekc.info##.wrapper > .right.sidebar:nth-of-type(5)\n\n! 3/29/2016, 8:33:59 AM https://beta.gismeteo.ru/weather-novosibirsk-4690/10-days/\nbeta.gismeteo.ru##.content > .wrap > .clearfix.flexbox > .right_col_2 > .__frame.wrap_small:nth-of-type(1) > .media_frame\n\n! 3/29/2016, 8:34:03 AM https://beta.gismeteo.ru/weather-novosibirsk-4690/10-days/\nbeta.gismeteo.ru##.content > .wrap > .clearfix.flexbox > .right_col_2 > .__frame.wrap_small:nth-of-type(2) > .media_frame\n\n! 3/29/2016, 8:34:09 AM https://beta.gismeteo.ru/weather-novosibirsk-4690/10-days/\nbeta.gismeteo.ru##.media_top\n\n! 3/29/2016, 8:34:21 AM https://beta.gismeteo.ru/weather-novosibirsk-4690/10-days/\nbeta.gismeteo.ru##.content > .wrap > .clearfix.flexbox > .right_col_1 > .__frame.wrap_small:nth-of-type(3) > .media_frame\n\n! 3/29/2016, 8:34:31 AM https://beta.gismeteo.ru/weather-novosibirsk-4690/10-days/\nbeta.gismeteo.ru##.content > .wrap > .clearfix.flexbox > .main > .__frame.news_frame\n\n! 3/29/2016, 8:38:23 AM https://beta.gismeteo.ru/weather-novosibirsk-4690/10-days/\nbeta.gismeteo.ru##.content > .wrap > .clearfix.flexbox > .main > .clearfix.__frame.media_with_map > .map_right > .maps_frame\n\n! 3/29/2016, 8:38:29 AM https://beta.gismeteo.ru/weather-novosibirsk-4690/10-days/\nbeta.gismeteo.ru##.content > .wrap > .clearfix.flexbox > .main > .clearfix.__frame.media_with_map > .media_left > .__frame.wrap_small > .media_frame\n\n! 3/29/2016, 8:38:35 AM https://beta.gismeteo.ru/weather-novosibirsk-4690/10-days/\nbeta.gismeteo.ru##.content > .wrap > .clearfix.flexbox > .main > .js_cities_pcities.clearfix.__frame.inside.cities_frame.cities\n\n! 3/29/2016, 8:38:38 AM https://beta.gismeteo.ru/weather-novosibirsk-4690/10-days/\nbeta.gismeteo.ru##.footer > .center.wrap\n\n! 3/29/2016, 8:38:41 AM https://beta.gismeteo.ru/weather-novosibirsk-4690/10-days/\nbeta.gismeteo.ru##.footer\n\n! 3/29/2016, 8:38:45 AM https://beta.gismeteo.ru/weather-novosibirsk-4690/10-days/\nbeta.gismeteo.ru##.content > .footer-buffer\n\n! 3/29/2016, 8:38:49 AM https://beta.gismeteo.ru/weather-novosibirsk-4690/10-days/\nbeta.gismeteo.ru##.content > .wrap > .clearfix.flexbox > .main > .media_middle\n\n! 3/29/2016, 8:40:08 AM https://tjournal.ru/\ntjournal.ru###b-content > .b-content-container > .b-content-wrapper > .b-content__b1 > .b-w-feed > .hereIsLoadMoreContainer > .b-block > .loadMoreHere.b-articles > .jk-navigation.b-articles__b_t2_1_1.b-articles__b_t2_1.b-articles__b_t2.b-articles__b:nth-of-type(2) > .b-articles__b__content\n\n! 3/29/2016, 8:40:16 AM https://tjournal.ru/\ntjournal.ru###js-ok-enable\n\n! 3/29/2016, 8:40:22 AM https://tjournal.ru/\ntjournal.ru##.b-ok-panel > .b-ok-panel__tip > svg\n\n! 3/29/2016, 8:40:25 AM https://tjournal.ru/\ntjournal.ru##.b-ok-panel > .b-ok-panel__tip > .b-ok-panel__tip-text\n\n! 3/29/2016, 8:40:28 AM https://tjournal.ru/\ntjournal.ru##.b-ok-panel > .b-ok-panel__close\n\n! 3/29/2016, 8:40:32 AM https://tjournal.ru/\ntjournal.ru###b-content > .b-content-container > .b-content-wrapper > .b-content__b1 > .b-w-feed > .hereIsLoadMoreContainer > .b-block > .loadMoreHere.b-articles > .jk-navigation.b-articles__b_t2_1_1.b-articles__b_t2_1.b-articles__b_t2.b-articles__b:nth-of-type(2) > .b-articles__b__actions\n\n! 3/29/2016, 8:40:37 AM https://tjournal.ru/\ntjournal.ru###b-content > .b-content-container > .b-content-wrapper > .b-content__b1 > .b-w-feed > .hereIsLoadMoreContainer > .b-block > .loadMoreHere.b-articles > .js-ga-scrolled.jk-navigation.b-articles__b_t2_4_1.b-articles__b_t2_4.b-articles__b_t2.b-articles__b > .b-articles__b__content > .b-articles__b__text__container > .b-articles__b__text > p\n\n! 3/29/2016, 8:40:55 AM https://tjournal.ru/\ntjournal.ru###b-content > .b-content-container > .b-content__b3 > .b-content__b3-w > .b-adv-300x500:nth-of-type(2) > .b-adv-300x500__wrapper\n\n! 3/29/2016, 8:40:59 AM https://tjournal.ru/\ntjournal.ru###b-content > .b-content-container > .b-content__b3 > .b-content__b3-w > .b-user-map.b-block-t2 > .b-side-wrapper > a[href=\"/users/map\"] > .b-side-map\n\n! 3/29/2016, 8:41:02 AM https://tjournal.ru/\ntjournal.ru###b-content > .b-content-container > .b-content__b3 > .b-content__b3-w > .b-user-map.b-block-t2 > .b-title\n\n! 3/29/2016, 8:41:06 AM https://tjournal.ru/\n||www.facebook.com/v2.4/plugins/page.php?adapt_container_width=true&app_id=&channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D42%23cb%3Df25409de984f7e8%26domain%3Dtjournal.ru%26origin%3Dhttps%253A%252F%252Ftjournal.ru%252Ffe49ae086d0c08%26relation%3Dparent.parent&container_width=300&hide_cover=false&href=https%3A%2F%2Fwww.facebook.com%2Ftjournal&locale=ru_RU&sdk=joey&show_facepile=true&show_posts=false&small_header=false&width=300\n\n! 3/29/2016, 8:41:10 AM https://tjournal.ru/\n||vk.com/widget_community.php?app=0&width=300px&_ver=1&gid=28261334&mode=0&color1=FFFFFF&color2=2B587A&color3=5B7FA6&class_name=&height=260&url=https%3A%2F%2Ftjournal.ru%2F&referrer=&title=%D0%9D%D0%BE%D0%B2%D0%BE%D1%81%D1%82%D0%B8%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82%D0%B0%3A%20%D1%82%D1%80%D0%B5%D0%BD%D0%B4%D1%8B%2C%20%D1%81%D0%BA%D0%B0%D0%BD%D0%B4%D0%B0%D0%BB%D1%8B%2C%20%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8%20%D0%B8%20%D0%BC%D0%B5%D0%B4%D0%B8%D0%B0&153c03df256\n\n! 3/29/2016, 8:41:15 AM https://tjournal.ru/\ntjournal.ru###b-content > .b-content-container > .b-content__b3 > .b-content__b3-w > .b-adv-300x500:nth-of-type(2) > .b-adv-300x500__about[href=\"/advertising\"] > u\n\n! 3/29/2016, 8:41:18 AM https://tjournal.ru/\ntjournal.ru###b-content > .b-content-container > .b-content__b3 > .b-content__b3-w > .b-user-map.b-block-t2\n\n! 3/29/2016, 1:42:12 PM https://beta.gismeteo.ru/weather-novosibirsk-4690/10-days/#/wind.precipitation.pressure.humidity/\nbeta.gismeteo.ru##.content > .wrap > .clearfix.flexbox > .right_col_1 > .__frame.wrap_small:nth-of-type(2) > .x400.media_frame\n\n! 3/29/2016, 1:42:16 PM https://beta.gismeteo.ru/weather-novosibirsk-4690/10-days/#/wind.precipitation.pressure.humidity/\nbeta.gismeteo.ru##.content > .wrap > .clearfix.flexbox > .right_col_1 > .wrap_small:nth-of-type(1) > .blockIt.weather_now > .wn_body > .clearfix.info_item > ._ic.ii > .tooltip.icon > .img > svg\n\n! 3/29/2016, 1:42:19 PM https://beta.gismeteo.ru/weather-novosibirsk-4690/10-days/#/wind.precipitation.pressure.humidity/\nbeta.gismeteo.ru##.content > .wrap > .clearfix.flexbox > .right_col_1 > .wrap_small:nth-of-type(1) > .blockIt.weather_now > .wn_body > .clearfix.info_item\n\n! 3/29/2016, 1:42:22 PM https://beta.gismeteo.ru/weather-novosibirsk-4690/10-days/#/wind.precipitation.pressure.humidity/\nbeta.gismeteo.ru##.content > .wrap > .clearfix.flexbox > .right_col_1 > .wrap_small:nth-of-type(1) > .blockIt.weather_now\n\n! 3/29/2016, 3:03:14 PM https://tjournal.ru/25538-v-egipte-zahvatili-vipolnyavshii-vnutrennii-reis-samolyot-egyptair\n||vk.com/widget_community.php?app=0&width=300px&_ver=1&gid=28261334&mode=0&color1=FFFFFF&color2=2B587A&color3=5B7FA6&class_name=&height=260&url=https%3A%2F%2Ftjournal.ru%2F25538-v-egipte-zahvatili-vipolnyavshii-vnutrennii-reis-samolyot-egyptair&referrer=&title=%D0%92%20%D0%95%D0%B3%D0%B8%D0%BF%D1%82%D0%B5%20%D0%B7%D0%B0%D1%85%D0%B2%D0%B0%D1%82%D0%B8%D0%BB%D0%B8%20%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D1%8F%D0%B2%D1%88%D0%B8%D0%B9%20%D0%B2%D0%BD%D1%83%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D0%B8%D0%B9%20%D1%80%D0%B5%D0%B9%D1%81%20%D1%81%D0%B0%D0%BC%D0%BE%D0%BB%D1%91%D1%82%20EgyptAir&153c19c1cba\n\n! 3/29/2016, 3:03:20 PM https://tjournal.ru/25538-v-egipte-zahvatili-vipolnyavshii-vnutrennii-reis-samolyot-egyptair\n||www.facebook.com/v2.4/plugins/page.php?adapt_container_width=true&app_id=&channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D42%23cb%3Df2deeed5ae395c%26domain%3Dtjournal.ru%26origin%3Dhttps%253A%252F%252Ftjournal.ru%252Ff2f327055b5cb0c%26relation%3Dparent.parent&container_width=300&hide_cover=false&href=https%3A%2F%2Fwww.facebook.com%2Ftjournal&locale=ru_RU&sdk=joey&show_facepile=true&show_posts=false&small_header=false&width=300\n\n! 3/29/2016, 3:51:11 PM http://www.mekc.info/2016/03/29/%d1%81%d0%be%d1%82%d0%bd%d1%8f-3-%d1%81%d0%b5%d0%b7%d0%be%d0%bd-%d0%b4%d0%b6%d0%b5%d0%b9%d1%81%d0%be%d0%bd-%d1%80%d0%be%d1%82%d0%b5%d0%bd%d0%b1%d0%b5%d1%80%d0%b3-%d0%be-%d1%81%d0%bc%d0%b5%d1%80%d1%82/\nwww.mekc.info##.footer\n\n! 3/29/2016, 3:51:17 PM http://www.mekc.info/2016/03/29/%d1%81%d0%be%d1%82%d0%bd%d1%8f-3-%d1%81%d0%b5%d0%b7%d0%be%d0%bd-%d0%b4%d0%b6%d0%b5%d0%b9%d1%81%d0%be%d0%bd-%d1%80%d0%be%d1%82%d0%b5%d0%bd%d0%b1%d0%b5%d1%80%d0%b3-%d0%be-%d1%81%d0%bc%d0%b5%d1%80%d1%82/\n||disqus.com/embed/comments/?base=default&version=208e70781fad1709ad376036d91294bc&f=mekcinfo&t_i=43328%20http%3A%2F%2Fwww.mekc.info%2F%3Fp%3D43328&t_u=http%3A%2F%2Fwww.mekc.info%2F2016%2F03%2F29%2F%25d1%2581%25d0%25be%25d1%2582%25d0%25bd%25d1%258f-3-%25d1%2581%25d0%25b5%25d0%25b7%25d0%25be%25d0%25bd-%25d0%25b4%25d0%25b6%25d0%25b5%25d0%25b9%25d1%2581%25d0%25be%25d0%25bd-%25d1%2580%25d0%25be%25d1%2582%25d0%25b5%25d0%25bd%25d0%25b1%25d0%25b5%25d1%2580%25d0%25b3-%25d0%25be-%25d1%2581%25d0%25bc%25d0%25b5%25d1%2580%25d1%2582%2F&t_e=%26%23171%3B%D0%A1%D0%BE%D1%82%D0%BD%D1%8F%26%23187%3B%3A%203%20%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%2C%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B2%D1%8C%D1%8E%20%D0%94%D0%B6%D0%B5%D0%B9%D1%81%D0%BE%D0%BD%D0%B0%20%D0%A0%D0%BE%D1%82%D0%B5%D0%BD%D0%B1%D0%B5%D1%80%D0%B3%D0%B0%20%D0%BE%20%D1%81%D0%BC%D0%B5%D1%80%D1%82%D0%B8%20%D0%9B%D0%B5%D0%BA%D1%81%D1%8B&t_d=%D0%A1%D0%BE%D1%82%D0%BD%D1%8F%20-%203%20%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%2C%20%D0%94%D0%B6%D0%B5%D0%B9%D1%81%D0%BE%D0%BD%20%D0%A0%D0%BE%D1%82%D0%B5%D0%BD%D0%B1%D0%B5%D1%80%D0%B3%20%D0%BE%20%D1%81%D0%BC%D0%B5%D1%80%D1%82%D0%B8%20%D0%9B%D0%B5%D0%BA%D1%81%D1%8B&t_t=%26%23171%3B%D0%A1%D0%BE%D1%82%D0%BD%D1%8F%26%23187%3B%3A%203%20%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%2C%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B2%D1%8C%D1%8E%20%D0%94%D0%B6%D0%B5%D0%B9%D1%81%D0%BE%D0%BD%D0%B0%20%D0%A0%D0%BE%D1%82%D0%B5%D0%BD%D0%B1%D0%B5%D1%80%D0%B3%D0%B0%20%D0%BE%20%D1%81%D0%BC%D0%B5%D1%80%D1%82%D0%B8%20%D0%9B%D0%B5%D0%BA%D1%81%D1%8B&s_o=default&l=\n\n! 3/29/2016, 3:52:11 PM http://ru.investing.com/indices/rtsi-chart\nru.investing.com###TopTextAd\n\n! 4/4/2016, 5:00:10 PM http://gidonline.club/page/9/\ngidonline.club###big[href=\"http://thisclick.rocks/gidonline/brd/\"]\n\n! 4/4/2016, 5:00:16 PM http://gidonline.club/page/9/\ngidonline.club###backim\n\n! 4/4/2016, 5:00:23 PM http://gidonline.club/page/9/\n||cdn7.space/10800/index.html\n\n! 4/4/2016, 5:00:31 PM http://gidonline.club/page/9/\n||gidonline.club/im/gidclublogo.png\n\n! 4/12/2016, 8:38:12 AM http://moex.com/ru/contract.aspx?code=RIM6\n||flowers.moex.com/b/b.asp?palias=union-market-derivatives&id=152\n\n! 4/24/2016, 2:35:06 AM http://originals.mekc.info/\noriginals.mekc.info###gnezdo_ru_11129 > .gnezdo_main_block > .gnezdo_table\n\n! 4/24/2016, 2:35:11 AM http://originals.mekc.info/\noriginals.mekc.info###gnezdo_ru_11130 > .gnezdo_main_block > .gnezdo_table\n\n! 4/24/2016, 2:35:21 AM http://originals.mekc.info/\noriginals.mekc.info###utcw-2 > .widget_f > .widget_content\n\n! 4/28/2016, 10:40:12 PM http://rutracker.org/forum/index.php\nrutracker.org###logo\n\n! 4/28/2016, 10:40:21 PM http://rutracker.org/forum/index.php\nrutracker.org###page_container > .brand-link-1[href^=\"http://fbmetrix.net/altdn-sbm-www/\"]\n"
+}
