@@ -18,12 +18,12 @@
 	own_window true
 	own_window_type override
 	own_window_transparent true
-	update_interval 99.0
+	update_interval 99
 	use_xft true
 	#uppercase no
     #use_spacer none
-    #minimum_size 5 5
-    maximum_width 500
+    minimum_size 465 275
+    maximum_width 1000
 
     maximum_size 500 500
     text_buffer_size 4096
@@ -31,4 +31,4 @@
 
 TEXT
 
-${exec cd /home/sultanbaev/.local/share/Trash/files/ && ls -a}
+${exec bash /home/sultanbaev/Dropbox/_Important/_dotfiles/scripts/rts.sh}${image /home/sultanbaev/RTS-6.16.gif -s 465x275}

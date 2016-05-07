@@ -18,5 +18,4 @@ alias gr="git remote add origin https://github.com/sultanbaev/"$1".git"
 
 PS1='\[\e[0;32m\]\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]>>>>>>>>>>>>>>>>>>>>\[\e[m\] \[\e[1;37m\]'
 
-#if [ -f /usr/bin/screenfetch ]; then screenfetch; fi
-#if [ -f /usr/bin/ponysay ]; then ponysay -q; fi
+bash /home/sultanbaev/Dropbox/_Important/_dotfiles/scripts/colors.sh
