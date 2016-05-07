@@ -3,7 +3,7 @@
 from urllib.request import FancyURLopener
 
 email = 'sultanbaev.vitaly' # @gmail.com can be left out
-password  = 'vita151090glibertate'
+password  = 'v1l'
 
 url = 'https://%s:%s@mail.google.com/mail/feed/atom' % (email, password)
 
