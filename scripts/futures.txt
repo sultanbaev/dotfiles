@@ -1,0 +1,6 @@
+http://informer.moex.com/main/graph/issue/RTS-6.16.gif
+http://informer.moex.com/main/graph/issue/MIX-6.16.gif
+http://informer.moex.com/main/graph/issue/BR-6.16.gif
+http://informer.moex.com/main/graph/issue/SBRF-6.16.gif
+http://informer.moex.com/main/graph/issue/Si-6.16.gif
+http://informer.moex.com/main/graph/issue/Eu-6.16.gif

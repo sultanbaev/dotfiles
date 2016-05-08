@@ -11,24 +11,34 @@
 	no_buffers yes
 	#font Bitstream Vera Sans:size=8
 	font Terminus:size=8
-	gap_x 20
-	gap_y 100
+	gap_x 80
+	gap_y 80
 	#minimum_width 200
 	no_buffers true
 	own_window true
 	own_window_type override
 	own_window_transparent true
-	update_interval 99
+	update_interval 600
 	use_xft true
 	#uppercase no
     #use_spacer none
-    minimum_size 465 275
+    minimum_size 1000 914
     maximum_width 1000
 
-    maximum_size 500 500
+    maximum_size 1000 914
     text_buffer_size 4096
+
+#${rss http://manjaro.org/feed/ 60 item_titles 3}
 
 
 TEXT
 
-${exec bash /home/sultanbaev/Dropbox/_Important/_dotfiles/scripts/rts.sh}${image /home/sultanbaev/RTS-6.16.gif -s 465x275}
+${exec bash /home/sultanbaev/Dropbox/_Important/_dotfiles/scripts/futures.sh}
+
+${image /home/sultanbaev/_main/RTS-6.16.gif -p 2,10 -s 465x275}
+${image /home/sultanbaev/_main/MIX-6.16.gif -p 2,310 -s 465x275}
+${image /home/sultanbaev/_main/Eu-6.16.gif -p 2,608 -s 465x275}
+
+${image /home/sultanbaev/_main/SBRF-6.16.gif -p 500,10 -s 465x275}
+${image /home/sultanbaev/_main/BR-6.16.gif -p 500,310 -s 465x275}
+${image /home/sultanbaev/_main/Si-6.16.gif -p 500,608 -s 465x275}
