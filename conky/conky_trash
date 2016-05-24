@@ -18,7 +18,7 @@
 	own_window true
 	own_window_type override
 	own_window_transparent true
-	update_interval 600
+	update_interval 99
 	use_xft true
 	#uppercase no
     #use_spacer none
@@ -33,12 +33,16 @@
 
 TEXT
 
-${exec bash /home/sultanbaev/Dropbox/_Important/_dotfiles/scripts/futures.sh}
+#${exec bash /home/sultanbaev/Dropbox/_Important/_dotfiles/scripts/futures.sh}
 
-${image /home/sultanbaev/_main/RTS-6.16.gif -p 2,10 -s 465x275}
-${image /home/sultanbaev/_main/MIX-6.16.gif -p 2,310 -s 465x275}
-${image /home/sultanbaev/_main/Eu-6.16.gif -p 2,608 -s 465x275}
+#${exec bash rm /home/sultanbaev/*.gif}
 
-${image /home/sultanbaev/_main/SBRF-6.16.gif -p 500,10 -s 465x275}
-${image /home/sultanbaev/_main/BR-6.16.gif -p 500,310 -s 465x275}
-${image /home/sultanbaev/_main/Si-6.16.gif -p 500,608 -s 465x275}
+#${exec /usr/bin/wget -i /home/sultanbaev/Dropbox/_Important/_dotfiles/scripts/futures.txt && rm /home/sultanbaev/_main/*.gif && mv ~/*.gif /home/sultanbaev/_main/}
+
+#${image /home/sultanbaev/_main/RTS-6.16.gif -p 2,10 -s 465x275}
+#${image /home/sultanbaev/_main/MIX-6.16.gif -p 2,310 -s 465x275}
+#${image /home/sultanbaev/_main/Eu-6.16.gif -p 2,608 -s 465x275}
+
+#${image /home/sultanbaev/_main/SBRF-6.16.gif -p 500,10 -s 465x275}
+#${image /home/sultanbaev/_main/BR-6.16.gif -p 500,310 -s 465x275}
+#${image /home/sultanbaev/_main/Si-6.16.gif -p 500,608 -s 465x275}

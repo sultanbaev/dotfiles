@@ -169,7 +169,7 @@ exec --no-startup-id feh --randomize --bg-scale /home/sultanbaev/Dropbox/_Docume
 
 exec --no-startup-id dropbox
 
-exec --no-startup-id conky -c /home/sultanbaev/Dropbox/_Important/_dotfiles/conky/conky_trash
+#exec --no-startup-id conky -c /home/sultanbaev/Dropbox/_Important/_dotfiles/conky/conky_trash
 
 #--------------------------------------------------------------------------------------
 
