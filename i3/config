@@ -163,13 +163,15 @@ exec --no-startup-id guake
 
 exec --no-startup-id setxkbmap "us,ru" ",winkeys" "grp:alt_shift_toggle" "grp_led:scroll" "compose:rwin"
 
-exec --no-startup-id mplayer /home/sultanbaev/Dropbox/_Important/_dotfiles/sounds/service-login.oga
-
 exec --no-startup-id feh --randomize --bg-scale /home/sultanbaev/Dropbox/_Documents/_Arch/*
 
-exec --no-startup-id dropbox && chromium
+exec --no-startup-id dropbox
 
-#exec --no-startup-id conky -c /home/sultanbaev/Dropbox/_Important/_dotfiles/conky/conky_trash
+exec --no-startup-id chromium
+
+exec --no-startup-id yandex-disk start
+
+exec --no-startup-id yandex-disk sync
 
 #--------------------------------------------------------------------------------------
 
@@ -204,12 +206,13 @@ for_window [class="Subl3"] move container to workspace "5: code"
 for_window [class="Sublime_text"] move container to workspace "5: code"
 for_window [class="sublime_text"] move container to workspace "5: code"
 
-for_window [class="Gimp"] move container to workspace "6: a"
-for_window [class="libreoffice-writer"] move container to workspace "6: a"
-for_window [class="libreoffice-calc"] move container to workspace "6: a"
 for_window [class="VirtualBox"] move container to workspace "6: a"
-for_window [class="Homebank"] move container to workspace "6: a"
-for_window [class="homebank"] move container to workspace "6: a"
+
+for_window [class="Gimp"] move container to workspace "7: b"
+for_window [class="libreoffice-writer"] move container to workspace "7: b"
+for_window [class="libreoffice-calc"] move container to workspace "7: b"
+for_window [class="Homebank"] move container to workspace "7: b"
+for_window [class="homebank"] move container to workspace "7: b"
 
 for_window [class="URxvt"] move container to workspace "10: term", workspace "10: term", focus
 for_window [class="urxvt"] move container to workspace "10: term", workspace "10: term", focus
