@@ -70,8 +70,8 @@ bindsym $mod+t border toggle
 
 bindsym $mod+l exec blurlock
 
-bindsym --release Print exec "scrot /home/sultanbaev/Dropbox/_Documents/_Shot/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png && mplayer /home/sultanbaev/Dropbox/_Important/_dotfiles/sounds/camera-shutter.oga"
-bindsym --release Shift+Print exec "scrot -s /home/sultanbaev/Dropbox/_Documents/_Shot/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png  && mplayer /home/sultanbaev/Dropbox/_Important/_dotfiles/sounds/camera-shutter.oga"
+bindsym --release Print exec "scrot /home/sultanbaev/Yandex.Disk/Documents/_Shot/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png && mplayer /home/sultanbaev/Dropbox/_Important/_dotfiles/sounds/camera-shutter.oga"
+bindsym --release Shift+Print exec "scrot -s /home/sultanbaev/Yandex.Disk/Documents/_Shot/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png  && mplayer /home/sultanbaev/Dropbox/_Important/_dotfiles/sounds/camera-shutter.oga"
 
 #arch
 bindsym F12 exec amixer -c 0 set Master 2dB+
