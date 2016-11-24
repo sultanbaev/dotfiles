@@ -9,6 +9,7 @@ alias ls='ls --color=auto'
 
 alias sgi="cd /home/sultanbaev/Dropbox/_Important/_003_sultanbaev.github.io/"
 alias df="cd /home/sultanbaev/Dropbox/_Important/_dotfiles/"
+alias sh="cd /home/sultanbaev/Dropbox/_Important/_001_shothub/"
 
 alias gi="git init"
 alias ga="git add ."
