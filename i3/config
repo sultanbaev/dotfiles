@@ -27,7 +27,7 @@ floating_modifier $mod
 
 
 #---------------------------------------------------------------------------- shortcuts
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Shift+Return exec i3-sensible-terminal
 
 bindsym $mod+Shift+q kill
 
@@ -70,8 +70,8 @@ bindsym $mod+t border toggle
 
 bindsym $mod+l exec blurlock
 
-bindsym --release Print exec "scrot /home/sultanbaev/Yandex.Disk/Documents/_Shot/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png && mplayer /home/sultanbaev/Dropbox/_Important/_dotfiles/sounds/camera-shutter.oga"
-bindsym --release Shift+Print exec "scrot -s /home/sultanbaev/Yandex.Disk/Documents/_Shot/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png  && mplayer /home/sultanbaev/Dropbox/_Important/_dotfiles/sounds/camera-shutter.oga"
+bindsym --release Print exec "scrot /home/sultanbaev/Yandex.Disk/Documents/_Shot/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png && mplayer /home/sultanbaev/Dropbox/_Important/_dotfiles/sounds/camera-shutter.mp3"
+bindsym --release Shift+Print exec "scrot -s /home/sultanbaev/Yandex.Disk/Documents/_Shot/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png  && mplayer /home/sultanbaev/Dropbox/_Important/_dotfiles/sounds/camera-shutter.mp3"
 
 #arch
 bindsym F12 exec amixer -c 0 set Master 2dB+
@@ -141,6 +141,7 @@ mode "resize" {
 bar {
         status_command conky -c /home/sultanbaev/Dropbox/_Important/_dotfiles/conky/conky_bar
         separator_symbol "-"
+        tray_output none
 
         
         colors {
@@ -159,19 +160,21 @@ bar {
 
 #---------------------------------------------------------------------------- autostart
 
+exec --no-startup-id chromium
+
+exec --no-startup-id feh --randomize --bg-scale /home/sultanbaev/Dropbox/_Documents/_Arch/*
+
 exec --no-startup-id guake
 
 exec --no-startup-id setxkbmap "us,ru" ",winkeys" "grp:alt_shift_toggle" "grp_led:scroll" "compose:rwin"
 
-exec --no-startup-id feh --randomize --bg-scale /home/sultanbaev/Dropbox/_Documents/_Arch/*
+exec --no-startup-id dddd
 
 exec --no-startup-id dropbox
 
-#exec --no-startup-id palemoon
+exec --no-startup-id yandex-disk start && sleep 3 && sync
 
-exec --no-startup-id yandex-disk start
-
-exec --no-startup-id yandex-disk sync
+#exec --no-startup-id yandex-disk 
 
 #--------------------------------------------------------------------------------------
 
@@ -188,13 +191,14 @@ for_window [class="transmission-gtk"] floating enabled, move container to worksp
 for_window [class="Skype"] floating enable, move container to workspace "1: main"
 
 for_window [class="Firefox"] move container to workspace "2: web"
-for_window [class="chromium"] move container to workspace "2: web"
+for_window [class="Chromium"] move container to workspace "2: web", focus
 for_window [class="Pale moon"] move container to workspace "2: web"
 
 for_window [class="Vkaudiosaver"] move container to workspace "3: media"
 for_window [class="Deadbeef"] move container to workspace "3: media"
 
 for_window [class="Doublecmd"] move container to workspace "4: file"
+for_window [class="Spacefm"] move container to workspace "4: file"
 
 for_window [class="Subl3"] move container to workspace "5: code"
 for_window [class="Sublime_text"] move container to workspace "5: code"

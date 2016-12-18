@@ -8,8 +8,6 @@ default_color 888888
 color2 FD971F
 color3 AE81FF
 
-# ${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ UNNT temperature}'C ::: 
-
 TEXT
 
-${exec bash /home/sultanbaev/Dropbox/_Important/_dotfiles/scripts/deadbeef.sh}$uptime ::: ${cpu cpu0}% ${exec sensors | grep 'Core 0:' | cut -c18-19}'C ::: ${mem} ::: ${fs_free /} ::: ${execpi 120 python /home/sultanbaev/gmail.py} ::: ${time %H:%M} :::
+${exec bash /home/sultanbaev/Dropbox/_Important/_dotfiles/scripts/deadbeef.sh}$uptime ::: ${cpu cpu0}% ${exec sensors | grep 'Core 0:' | cut -c18-19}'C ::: ${mem} ::: ${fs_free /} ::: ${exec yandex-disk status | grep 'Available:' | cut -c13-50} ${execpi 120 python /home/sultanbaev/gmail.py}${time %H:%M} :::${exec yandex-disk status | grep 'Sync progress:' | cut -c15-50}

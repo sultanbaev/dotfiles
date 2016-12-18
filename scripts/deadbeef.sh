@@ -9,6 +9,6 @@ art_title = '/home/sultanbaev/Dropbox/_Programs/Progs_w_deb/DeadBeef64/deadbeef 
 
 if [ "$(art_title)" != 'nothing' ]; then
         echo ""$(/home/sultanbaev/Dropbox/_Programs/Progs_w_deb/DeadBeef64/deadbeef --nowplaying "%a - %t")"" "::: "
-        #echo "$a" "::: "
-        else echo " "
+        else
+        	echo " "
 fi
