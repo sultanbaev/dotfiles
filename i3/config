@@ -68,7 +68,7 @@ bindsym $mod+r mode "resize"
 
 bindsym $mod+t border toggle
 
-bindsym $mod+l exec blurlock
+#bindsym $mod+l exec blurlock
 
 bindsym --release Print exec "scrot /home/sultanbaev/Yandex.Disk/Documents/_Shot/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png && mplayer /home/sultanbaev/Dropbox/_Important/_dotfiles/sounds/camera-shutter.mp3"
 bindsym --release Shift+Print exec "scrot -s /home/sultanbaev/Yandex.Disk/Documents/_Shot/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png  && mplayer /home/sultanbaev/Dropbox/_Important/_dotfiles/sounds/camera-shutter.mp3"
@@ -108,7 +108,7 @@ set $WS2 "2: web"
 set $WS3 "3: media"
 set $WS4 "4: file"
 set $WS5 "5: code"
-set $WS6 "6: wm"
+set $WS6 "6: vm"
 set $WS7 "7: b"
 set $WS8 "8: c"
 set $WS9 "9: d"
@@ -160,7 +160,7 @@ bar {
 
 #---------------------------------------------------------------------------- autostart
 
-exec --no-startup-id chromium
+exec --no-startup-id google-chrome-stable
 
 exec --no-startup-id feh --randomize --bg-scale /home/sultanbaev/Dropbox/_Documents/_Arch/*
 
@@ -172,9 +172,15 @@ exec --no-startup-id dddd
 
 exec --no-startup-id dropbox
 
-exec --no-startup-id yandex-disk start && sleep 3 && sync
+#exec --no-startup-id yandex-disk start && sleep 3 && sync
 
-#exec --no-startup-id yandex-disk 
+#exec --no-startup-id yandex-disk
+
+#exec --no-startup-id x11vnc -forever -display :0
+
+#exec --no-startup-id pactl load-module module-simple-protocol-tcp rate=48000 format=s16le channels=2 source=alsa_output.pci-0000_00_1b.0.analog-stereo.monitor record=true port=5900 listen=192.168.1.5
+
+exec --no-startup-id /home/sultanbaev/Dropbox/_Programs/Progs_w_deb/DeadBeef64/deadbeef --play-pause
 
 #--------------------------------------------------------------------------------------
 
@@ -189,9 +195,11 @@ for_window [class="galculator"] floating enabled
 for_window [class="Transmission-gtk"] floating enabled, move container to workspace "1: main"
 for_window [class="transmission-gtk"] floating enabled, move container to workspace "1: main"
 for_window [class="Skype"] floating enable, move container to workspace "1: main"
+for_window [class="TeamViewer"] floating enabled, move container to workspace "1: main"
 
 for_window [class="Firefox"] move container to workspace "2: web"
 for_window [class="Chromium"] move container to workspace "2: web", focus
+for_window [class="Google-chrome"] move container to workspace "2: web", focus
 for_window [class="Pale moon"] move container to workspace "2: web"
 
 for_window [class="Vkaudiosaver"] move container to workspace "3: media"
@@ -204,7 +212,7 @@ for_window [class="Subl3"] move container to workspace "5: code"
 for_window [class="Sublime_text"] move container to workspace "5: code"
 for_window [class="sublime_text"] move container to workspace "5: code"
 
-for_window [class="VirtualBox"] move container to workspace "6: wm"
+for_window [class="VirtualBox"] move container to workspace "6: vm"
 
 for_window [class="Gimp"] move container to workspace "7: b"
 
