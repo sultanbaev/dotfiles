@@ -141,7 +141,7 @@ mode "resize" {
 bar {
         status_command conky -c /home/sultanbaev/Dropbox/_Important/_dotfiles/conky/conky_bar
         separator_symbol "-"
-        tray_output none
+        #tray_output primary
 
         
         colors {
@@ -168,19 +168,20 @@ exec --no-startup-id guake
 
 exec --no-startup-id setxkbmap "us,ru" ",winkeys" "grp:alt_shift_toggle" "grp_led:scroll" "compose:rwin"
 
-exec --no-startup-id dddd
-
 exec --no-startup-id dropbox
+
+exec --no-startup-id yandex-disk-indicator
+
+#exec --no-startup-id dddd
 
 #exec --no-startup-id yandex-disk start && sleep 3 && sync
 
-#exec --no-startup-id yandex-disk
 
 #exec --no-startup-id x11vnc -forever -display :0
 
 #exec --no-startup-id pactl load-module module-simple-protocol-tcp rate=48000 format=s16le channels=2 source=alsa_output.pci-0000_00_1b.0.analog-stereo.monitor record=true port=5900 listen=192.168.1.5
 
-exec --no-startup-id /home/sultanbaev/Dropbox/_Programs/Progs_w_deb/DeadBeef64/deadbeef --play-pause
+#exec --no-startup-id /home/sultanbaev/Dropbox/_Programs/Progs_w_deb/DeadBeef64/deadbeef --play-pause
 
 #--------------------------------------------------------------------------------------
 

@@ -13,3 +13,6 @@ subpos=80
 
 # Progress bar
 progbar-align=0
+
+# Video aspect
+aspect=4/3

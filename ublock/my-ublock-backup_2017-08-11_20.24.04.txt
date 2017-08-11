@@ -1,0 +1,78 @@
+{
+  "timeStamp": 1502457844911,
+  "version": "1.13.8",
+  "userSettings": {
+    "advancedUserEnabled": false,
+    "alwaysDetachLogger": false,
+    "autoUpdate": true,
+    "cloudStorageEnabled": false,
+    "collapseBlocked": true,
+    "colorBlindFriendly": false,
+    "contextMenuEnabled": true,
+    "dynamicFilteringEnabled": false,
+    "externalLists": [],
+    "firewallPaneMinimized": true,
+    "hyperlinkAuditingDisabled": true,
+    "ignoreGenericCosmeticFilters": false,
+    "largeMediaSize": 50,
+    "parseAllABPHideFilters": true,
+    "prefetchingDisabled": true,
+    "requestLogMaxEntries": 1000,
+    "showIconBadge": true,
+    "tooltipsDisabled": false,
+    "webrtcIPAddressHidden": false
+  },
+  "selectedFilterLists": [
+    "easylist",
+    "easyprivacy",
+    "malware-0",
+    "malware-1",
+    "plowe-0",
+    "ublock-badware",
+    "ublock-filters",
+    "ublock-privacy",
+    "ublock-unbreak",
+    "user-filters"
+  ],
+  "hiddenSettingsString": "assetFetchTimeout 30\nautoUpdateAssetFetchPeriod 120\nautoUpdatePeriod 7\nignoreRedirectFilters false\nignoreScriptInjectFilters false\nmanualUpdateAssetFetchPeriod 2000\npopupFontSize unset\nsuspendTabsUntilReady false\nuserResourcesLocation unset",
+  "netWhitelist": "about-scheme\nbehind-the-scene\nchrome-extension-scheme\nchrome-scheme\nmoz-extension-scheme\nopera-scheme\nvivaldi-scheme",
+  "dynamicFilteringString": "behind-the-scene * 3p-frame noop\nbehind-the-scene * 3p noop",
+  "urlFilteringString": "",
+  "hostnameSwitchesString": "",
+  "userFilters": "! 2/6/2017, 3:28:24 PM http://www.novate.ru/blogs/050217/39955/\nwww.novate.ru##.relap-novate_ru__widetitles-wrapper\n\n! 2/6/2017, 3:30:35 PM http://www.novate.ru/blogs/050217/39948/\nwww.novate.ru##.relap-novate_ru__widetitles-wrapper\n\n! 2/6/2017, 3:31:45 PM http://www.novate.ru/blogs/040217/39938/\nwww.novate.ru##.relap-novate_ru__widetitles-wrapper\n\n! 2/9/2017, 5:22:13 PM http://oltest.ru/tests/avtolyubitelyam/pdd_ostanovka_i_stoyanka/rezultat/\n||oltest.ru/blurb1/$subdocument\n\n! 2/22/2017, 6:59:51 PM https://beta.gismeteo.ru/weather-novosibirsk-4690/10-days/\nbeta.gismeteo.ru##.right_col_2 > .__frame.wrap_small:nth-of-type(1) > .media_frame\n\n! 2/22/2017, 6:59:56 PM https://beta.gismeteo.ru/weather-novosibirsk-4690/10-days/\nbeta.gismeteo.ru##.__frame.wrap_small:nth-of-type(2) > .media_frame\n\n! 2/22/2017, 7:00:00 PM https://beta.gismeteo.ru/weather-novosibirsk-4690/10-days/\nbeta.gismeteo.ru##.prightrki.mframe\n\n! 2/22/2017, 7:00:09 PM https://beta.gismeteo.ru/weather-novosibirsk-4690/10-days/\nbeta.gismeteo.ru##.__frame.wrap_small:nth-of-type(3) > .media_frame\n\n! 2/22/2017, 7:00:13 PM https://beta.gismeteo.ru/weather-novosibirsk-4690/10-days/\nbeta.gismeteo.ru##.__frame.wrap_small:nth-of-type(4) > .media_frame\n\n! 2/22/2017, 7:00:17 PM https://beta.gismeteo.ru/weather-novosibirsk-4690/10-days/\nbeta.gismeteo.ru##.phoriznhv.mframe\n\n! 2/22/2017, 7:00:26 PM https://beta.gismeteo.ru/weather-novosibirsk-4690/10-days/\nbeta.gismeteo.ru##.__frame.news_frame\n\n! 2/22/2017, 7:01:29 PM https://beta.gismeteo.ru/weather-novosibirsk-4690/month/\nbeta.gismeteo.ru##.__frame.wrap_small:nth-of-type(5) > .media_frame\n\n! 3/4/2017, 11:20:49 PM https://www.arconaitv.me/\nwww.arconaitv.me##.ui-front.ui-widget-overlay\n\n! 3/4/2017, 11:20:58 PM https://www.arconaitv.me/\nwww.arconaitv.me###dialog\n\n! 3/4/2017, 11:21:03 PM https://www.arconaitv.me/\nwww.arconaitv.me##.ui-helper-clearfix.ui-corner-all.ui-widget-header.ui-dialog-titlebar\n\n! 3/4/2017, 11:21:31 PM https://www.arconaitv.me/action/\n||www7.cbox.ws/box/?boxid=829481&boxtag=adaxoh$subdocument\n\n! 3/9/2017, 9:57:30 PM https://music.yandex.ru/search?text=Denmark%20%2B%20winter%20%E2%80%94%20Every%20Breath%20You%20Take\nmusic.yandex.ru##.audio-advert__block\n\n! 3/9/2017, 10:19:29 PM https://music.yandex.ru/search?text=Rhodes%20%E2%80%94%20Turning%20Back%20Around\nmusic.yandex.ru##.subscription-hint_bottom.popup_fixed.popup.subscription-hint\n\n! 3/15/2017, 11:09:46 PM https://music.yandex.ru/feed\nmusic.yandex.ru##.subscription-hint_bottom.popup_fixed.popup.subscription-hint\n\n! 3/15/2017, 11:28:18 PM https://music.yandex.ru/artist/168028/tracks\nmusic.yandex.ru##.link_major.link.no-ads\n\n! 3/15/2017, 11:51:11 PM https://music.yandex.ru/artist/451523\nmusic.yandex.ru##.popup_fixed.subscription-hint_bottom.popup.subscription-hint\n\n! 3/20/2017, 5:37:18 PM http://www.metrolyrics.com/one-more-cup-of-coffee-lyrics-frazey-ford.html\n||www.metrolyrics.com/iframes/canplayer/54124/1$subdocument\n\n! 5/14/2017, 12:30:53 AM http://kinoprofi.org/collect/filmy-pro-kosmos/\n||bazr.ru/player?playlistId=25179&close=1$subdocument\n\n! 6/2/2017, 9:16:25 PM https://rutracker.org/forum/index.php\n||rutrk.org/bn/olimp/3/1200x120.html$subdocument\n\n! 6/2/2017, 9:16:31 PM https://rutracker.org/forum/index.php\n||rutrk.org/*/*.*$subdocument\n\n! 7/30/2017, 11:26:50 PM https://music.yandex.ru/users/sultanbaevvitaly/playlists\nmusic.yandex.ru###avuagxktl > .esqxipv.mznoluo.hqlplch.mqxsmipm.jvipjhy > .aovift > .lwdmgtyckd > tbody > .lnqezvanp.eqiwduvr > .iqlsnrp.bshkkuguk.jytdikf\n\n! 7/30/2017, 11:27:00 PM https://music.yandex.ru/users/sultanbaevvitaly/playlists\nmusic.yandex.ru###avuagxktl > .esqxipv.mznoluo.hqlplch.mqxsmipm.jvipjhy > .aovift > .lwdmgtyckd > tbody > .kraadpy.eqiwduvr > .iqlsnrp.bshkkuguk.jytdikf\n\n! 7/30/2017, 11:27:10 PM https://music.yandex.ru/users/sultanbaevvitaly/playlists\nmusic.yandex.ru##.ads-block_side.smalladv.ads-block\n\n! 7/30/2017, 11:27:18 PM https://music.yandex.ru/users/sultanbaevvitaly/playlists\nmusic.yandex.ru##.ads-block_side.smalladv.ads-block\n\n! 8/8/2017, 8:29:08 PM https://www.pornhub.com/\nwww.pornhub.com###age-verification-wrapper\n",
+  "filterLists": {
+    "assets/thirdparties/easylist-downloads.adblockplus.org/easylist.txt": {
+      "off": false
+    },
+    "assets/thirdparties/easylist-downloads.adblockplus.org/easyprivacy.txt": {
+      "off": false
+    },
+    "assets/thirdparties/www.malwaredomainlist.com/hostslist/hosts.txt": {
+      "off": false
+    },
+    "assets/thirdparties/mirror1.malwaredomains.com/files/justdomains": {
+      "off": false
+    },
+    "assets/thirdparties/pgl.yoyo.org/as/serverlist": {
+      "off": false
+    },
+    "assets/ublock/badware.txt": {
+      "off": false
+    },
+    "assets/ublock/filters.txt": {
+      "off": false
+    },
+    "assets/ublock/privacy.txt": {
+      "off": false
+    },
+    "assets/ublock/unbreak.txt": {
+      "off": false
+    },
+    "assets/user/filters.txt": {
+      "off": false
+    },
+    "assets/ublock/experimental.txt": {
+      "off": true
+    }
+  }
+}
