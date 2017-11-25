@@ -1,0 +1,102 @@
+﻿#color black/cyan yellow/cyan
+color normal=0x07 highlight=0x9 helptext=0x7 heading=0x07 standard=0x7 border=0x7
+timeout 30
+default /windefault
+
+title      <<<< Вернуться в главное меню
+configfile /boot/menu.lst
+
+title
+clear
+title
+clear
+
+title Шаг 1 -- Установка Windows XP
+map --unmap=0:0xff
+map --unhook
+map --mem /WINSETUP/XPpSP3.ISO (0xff)
+savedefault 2
+checkrange 0x00,0x01 read 0x8280 && configfile /BOOTWS/fd.lst
+geometry (hd9) && configfile /BOOTWS/10.lst
+geometry (hd8) && configfile /BOOTWS/9.lst
+geometry (hd7) && configfile /BOOTWS/8.lst
+geometry (hd6) && configfile /BOOTWS/7.lst
+geometry (hd5) && configfile /BOOTWS/6.lst
+geometry (hd4) && configfile /BOOTWS/5.lst
+geometry (hd3) && configfile /BOOTWS/4.lst
+geometry (hd2) && configfile /BOOTWS/3.lst
+geometry (hd1) && configfile /BOOTWS/2.lst
+geometry (hd0) && configfile /BOOTWS/1.lst
+boot
+map --unmap=0:0xff
+map --unhook
+
+title Шаг 2 -- Установка Windows XP (после первой перезагрузки)
+geometry (hd9) && configfile /BOOTWS/10.lst
+geometry (hd8) && configfile /BOOTWS/9.lst
+geometry (hd7) && configfile /BOOTWS/8.lst
+geometry (hd6) && configfile /BOOTWS/7.lst
+geometry (hd5) && configfile /BOOTWS/6.lst
+geometry (hd4) && configfile /BOOTWS/5.lst
+geometry (hd3) && configfile /BOOTWS/4.lst
+geometry (hd2) && configfile /BOOTWS/3.lst
+geometry (hd1) && configfile /BOOTWS/2.lst
+geometry (hd0) && configfile /BOOTWS/1.lst
+boot
+
+title
+clear
+title XCYBK - 2B3KV - G8T8F - WXJM7 - WCTYT
+clear
+title JQB2P - Q6HVX - M2GW7 - 66XT9 - 2VC96
+clear
+title QRW39 - X6KXW - 64XGW - JDJT6 - RJX3G
+clear
+title B7R7P - J63JP - 2J7VH - W3TDJ - PDP7T
+clear
+title P4XK3 - TGQ3P - F9JB2 - GC6XQ - VXTMW
+clear
+title GGJJT - M34BP - 8KTMF - MXDYP - CFJMT
+clear
+title TQTPB - D8WH4 - HXR4W - C3PJF - R6VX3
+clear
+title H9PHB - XDJHG - WT6GT - 4MMP9 - CDKMB
+clear
+title J9V8M - CB4XR - TG89Q - 6J9C9 - 8TW3T
+clear
+title HVC6T - K3GCM - 7DHYD - 3R9WG - 4QHKD
+clear
+title Q8GKH - MDDYJ - 2B7YP - DJM9R - Q34V6
+clear
+title PG29T - 7B4Y8 - RMJFW - VTDM8 - HMRXD
+clear
+title MJJW4 - VR8YJ - 9R8K2 - WCCB7 - HWB7W
+clear
+title V2RB2 - TPBDH - T7KKX - WRPGX - 6DM88
+clear
+title WYRKX - 797BP - 3TR6T - KR8HG - 26YTG
+clear
+title HF47Y - GFKTF - YHW83 - 7JVF7 - 7CQYB
+clear
+title TXQDT - WXD9Y - G68YP - H7TCK - TTH4Q
+clear
+title QYTF4 - G8323 - DG6T3 - RQFJG - KQY2Y
+clear
+title JC7WG - 6W2YP - 27VHJ - 4Q3BF - 4MWXD
+clear
+title RHGRX - B9P62 - QBY2H - 843KC - 7JRPY
+clear
+title TKPMG - YXJXB - 29VF9 - QVJR6 - X4FWJ
+clear
+title VWP74 - 4HMKR - C8JM3 - V83R3 - CY3YW
+clear
+title D6T43 - TD49C - 2QBMF - YVDYW - FMM4Q
+clear
+title FXDF7 - 3B6C8 - VYHR6 - 7YXHW - 24MXG
+clear
+title MR49R - DRJXX - M6PX2 - V96BF - 8CKBJ
+clear
+title JWYJM - 26D7V - BQBRT - 27238 - 97H7Q
+clear
+title Q44MT - J34GV - M3Y9B - 646DX - DHT3Y
+clear

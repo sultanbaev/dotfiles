@@ -1,0 +1,134 @@
+﻿# Название подменю в шапке
+write (md)0x220+1 !BAT\necho -n -P:0000 %hdrcolor% +++++Rescue USB (All-In-One Edition) 1.0+++++ \0 && initscript (md)0x220+1 
+
+timeout=30 
+default 0
+# Путь к русскому шрифту для текстового режима.
+font /boot/rus.gz
+ 
+#Разрешение экрана, возможные значения: -1 640; -1 800; -1 1024.
+#В данном случае подбирается максимально возможное разрешение поддерживаемое BIOS
+#Путь к картинке для текстового режима.Картинка обязательно в формате bmp!И обязательно установленного выше разрешения!
+graphicsmode -1 800
+    graphicsmode -1 640 && set GM=640 && echo 640 xres supported
+    graphicsmode -1 800 && set GM=800 && echo 800 xres supported
+    graphicsmode -1 1024 && set GM=1024 && echo 1024 xres supported
+    pause --wait=1
+    #if "%GM%"=="1024" splashimage /boot/fon1024.bmp
+    #if "%GM%"=="800" splashimage /boot/fon800.bmp
+    #if "%GM%"=="640" splashimage /boot/fon640.bmp
+
+color normal=0x07 highlight=0x9 helptext=0x7 heading=0x07 standard=0x7 border=0x7
+
+
+
+# ----------------------------------------------------------------------
+title      Загрузка с жесткого диска
+find --set-root --ignore-floppies --ignore-cd /bootmgr || find --set-root --ignore-floppies --ignore-cd /ntldr
+map (hd0) (hd1)
+map (hd1) (hd0)
+map --hook
+rootnoverify (hd0)
+chainloader (hd0)+1
+# ----------------------------------------------------------------------
+
+
+
+# ----------------------------------------------------------------------
+title
+#==================================== Windows
+clear
+title
+clear
+title
+clear
+
+iftitle [if exist /WINSETUP/XPpSP3.ISO] Установка Windows XP
+map --unmap=0:0xff
+map --unhook
+savedefault
+find --set-root --ignore-cd /usbdrive.tag
+configfile /winsetup.lst
+
+iftitle [if exist /unib/bootunib] Установка Windows 7, 8, 10
+chainloader /unib/bootunib
+# ----------------------------------------------------------------------
+
+
+
+# ----------------------------------------------------------------------
+iftitle [if exist /linux/mint-xfce-32-bit/linuxmint-18.2-xfce-32bit.iso] 
+#====================================== Linux
+clear
+title
+clear
+
+iftitle [if exist /linux/mint-xfce-32-bit/casper/vmlinuz] Linux Mint 32bit
+kernel /linux/mint-xfce-32-bit/casper/vmlinuz live-media-path=/casper/ boot=casper splash iso-scan/filename=/linux/mint-xfce-32-bit/linuxmint-18.2-xfce-32bit.iso
+initrd /linux/mint-xfce-32-bit/casper/initrd.lz
+
+iftitle [if exist /linux/mint-xfce-64-bit/casper/vmlinuz] Linux Mint 64bit
+kernel /linux/mint-xfce-64-bit/casper/vmlinuz live-media-path=/casper/ boot=casper splash iso-scan/filename=/linux/mint-xfce-64-bit/linuxmint-18.2-xfce-64bit.iso
+initrd /linux/mint-xfce-64-bit/casper/initrd.lz
+
+iftitle [if exist /linux/puppy-32-bit/vmlinuz] Puppy Linux 32bit
+kernel /linux/puppy-32-bit/vmlinuz
+initrd /linux/puppy-32-bit/initrd.gz
+
+iftitle [if exist /linux/tails-64-bit/tails-amd64-3.2.iso] Tails 64bit
+kernel /linux/tails-64-bit/live/vmlinuz boot=live config live-media-path=/linux/tails-64-bit/live/
+initrd /linux/tails-64-bit/live/initrd.img
+
+# ----------------------------------------------------------------------
+
+
+
+# ----------------------------------------------------------------------
+title
+#==================================== Live CD
+clear
+title
+clear
+
+iftitle [if exist /2k10/WINPE.LST] Мультизагрузочный 2k10 v.6.1
+configfile /2k10/WINPE.lst
+
+iftitle [if exist /SSTR/menu.lst] WinPE 10 Sergei Strelec (x86/x64) 2016.03.03
+find --set-root --ignore-floppies --ignore-cd /SSTR/bootmgr
+chainloader /SSTR/bootmgr
+# ----------------------------------------------------------------------
+
+
+
+# ----------------------------------------------------------------------
+title
+#====================================== Utils
+clear
+title
+clear
+
+iftitle [if exist /veam/bootmgr] Veeam Endpoint Backup FREE 1.1.2.119 \n  Veeam Endpoint Backup FREE — простое решение для резервного копирования данных \n на ноутбуках и настольных ПК под управлением Windows.
+chainloader /veam/bootmgr
+
+title Работа с HDD
+configfile /boot/HDD.lst
+
+title Программы DOS
+configfile /boot/dos.lst
+# ----------------------------------------------------------------------
+
+
+
+# ----------------------------------------------------------------------
+title
+clear
+title
+clear
+title
+clear
+title      Выключить ПК
+halt
+
+title      Перезагрузить ПК
+reboot
+# ----------------------------------------------------------------------
