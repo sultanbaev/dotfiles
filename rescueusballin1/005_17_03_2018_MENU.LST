@@ -1,0 +1,269 @@
+﻿# Название подменю в шапке
+write (md)0x220+1 !BAT\necho -n -P:0000 %hdrcolor% +++++Rescue USB (All-In-One Edition) 1.0+++++ \0 && initscript (md)0x220+1 
+
+timeout=90 
+default 0
+# Путь к русскому шрифту для текстового режима.
+font /boot/rus.gz
+ 
+#Разрешение экрана, возможные значения: -1 640; -1 800; -1 1024.
+#В данном случае подбирается максимально возможное разрешение поддерживаемое BIOS
+#Путь к картинке для текстового режима.Картинка обязательно в формате bmp!И обязательно установленного выше разрешения!
+#graphicsmode -1 800
+graphicsmode -1 640
+    #graphicsmode -1 640 && set GM=640 && echo 640 xres supported
+    #graphicsmode -1 800 && set GM=800 && echo 800 xres supported
+    #graphicsmode -1 1024 && set GM=1024 && echo 1024 xres supported
+    #pause --wait=1
+    #if "%GM%"=="1024" splashimage /boot/fon1024.bmp
+    #if "%GM%"=="800" splashimage /boot/fon800.bmp
+    #if "%GM%"=="640" splashimage /boot/fon640.bmp
+
+color normal=0x07 highlight=0x9 helptext=0x7 heading=0x07 standard=0x7 border=0x7
+
+
+
+
+
+
+
+
+# ------------------------------------------------------------------------------------------------------------------ HDD
+
+title      Загрузка с жесткого диска
+find --set-root --ignore-floppies --ignore-cd /bootmgr || find --set-root --ignore-floppies --ignore-cd /ntldr
+map (hd0) (hd1)
+map (hd1) (hd0)
+map --hook
+rootnoverify (hd0)
+chainloader (hd0)+1
+
+title
+clear
+title
+clear
+title
+clear
+
+# ----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+# ---------------------------------------------------------------------------------------------------------------- TESTS
+
+iftitle [if exist /SSTR/DOS/HDDREG.ISO] HDD Regenerator
+find --set-root --ignore-floppies /SSTR/DOS/HDDREG.ISO
+map --mem /SSTR/DOS/HDDREG.ISO (0xff)
+map --hook
+chainloader (0xff)
+
+iftitle [if exist /SSTR/DOS/MT501.ISO] MemTest
+find --set-root --ignore-floppies /SSTR/DOS/MT501.ISO
+map --mem /SSTR/DOS/MT501.ISO (0xff)
+map --hook
+chainloader (0xff)
+
+iftitle [if exist /SSTR/DOS/VCR35R.ISO] Victoria
+find --set-root --ignore-floppies /SSTR/DOS/VCR35R.ISO
+map --mem /SSTR/DOS/VCR35R.ISO (0xff)
+map --hook
+chainloader (0xff)
+
+iftitle [if exist /DOS/Qtpro580.IMG] QuickTech Pro
+find --set-root /grldr
+kernel /DOS/memdisk
+initrd /DOS/Qtpro580.IMG
+
+title
+clear
+title
+clear
+title
+clear
+
+# ----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+# -------------------------------------------------------------------------------------------------------------- WINDOWS
+
+iftitle [if exist /WINSETUP/XPpSP3.ISO] Установка Windows XP
+map --unmap=0:0xff
+map --unhook
+savedefault
+find --set-root --ignore-cd /usbdrive.tag
+configfile /winsetup.lst
+
+iftitle [if exist /bootmgr7] Установка Windows 7
+find --set-root --ignore-floppies /bootmgr7
+chainloader /bootmgr7
+
+iftitle [if exist /unib/bootunib] Установка Windows 7, 8, 10
+chainloader /unib/bootunib
+
+iftitle [if exist /WIN10/bootmgr] Установка Windows 10
+
+title
+clear
+title
+clear
+title
+clear
+
+# ----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+# ---------------------------------------------------------------------------------------------------------------- LINUX
+
+iftitle [if exist /linux/q4os-32-bit/live/vmlinuz] Q4OS 32bit
+kernel /linux/q4os-32-bit/live/vmlinuz apic=off irqpoll boot=live config live-media-path=/linux/q4os-32-bit/live/
+initrd /linux/q4os-32-bit/live/initrd.img
+
+iftitle [if exist /linux/mint-xfce-32-bit/casper/vmlinuz] Linux Mint 32bit
+kernel /linux/mint-xfce-32-bit/casper/vmlinuz live-media-path=/casper/ boot=casper splash iso-scan/filename=/linux/mint-xfce-32-bit/linuxmint-18.2-xfce-32bit.iso
+initrd /linux/mint-xfce-32-bit/casper/initrd.lz
+
+iftitle [if exist /linux/kolibrios/kolibri.img] Kolibri OS
+kernel /linux/kolibrios/HD_Load/memdisk
+initrd /linux/kolibrios/kolibri.img
+
+iftitle [if exist /linux/puppy-32-bit/vmlinuz] Puppy Linux 32bit
+kernel /linux/puppy-32-bit/vmlinuz
+initrd /linux/puppy-32-bit/initrd.gz
+
+iftitle [if exist /linux/inquisitor/initrd.img-2.6.26-2-686] Inquisitor
+kernel /linux/inquisitor/vmlinuz-2.6.26-2-686 boot=live noautologin nolocales hostname=inq union=aufs
+initrd	/linux/inquisitor/initrd.img-2.6.26-2-686
+
+iftitle [if exist /linux/elementaryos/casper/vmlinuz] Elementary OS x64
+find --set-root /linux/elementaryos/elementaryos.iso
+kernel /linux/elementaryos/casper/vmlinuz file=/cdrom/preseed/ubuntu.seed boot=casper persistent iso-scan/filename=/linux/elementaryos/elementaryos.iso splash
+initrd /linux/elementaryos/casper/initrd.lz
+
+iftitle [if exist /linux/manjaro_i3/boot/VMLINUZ_X86_64] Manjaro i3
+#kernel /linux/manjaro_i3/boot/VMLINUZ_X86_64
+#initrd /linux/manjaro_i3/boot/INITRAMFS_X86_64.IMG
+kernel /linux/manjaro_i3/BOOT/GRUB/I386_PC/core.img
+
+title
+clear
+title
+clear
+title
+clear
+
+# ----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+# -------------------------------------------------------------------------------------------------------------- ACRONIS
+
+iftitle [if exist /DOS/HDD/RAZDELY/ATI2017/1.krn] Acronis True Image 2017
+find --set-root --ignore-floppies --ignore-cd /DOS/HDD/RAZDELY/ATI2017/1.krn
+kernel /DOS/HDD/RAZDELY/ATI2017/1.krn vga=791 quiet
+initrd /DOS/HDD/RAZDELY/ATI2017/1.fs /DOS/HDD/RAZDELY/ATI2017/1-1.fs
+
+iftitle [if exist /DOS/HDD/RAZDELY/ADD2017/1.krn] Acronis Disk Director 2017
+find --set-root --ignore-floppies --ignore-cd /DOS/HDD/RAZDELY/ADD2017/1.krn
+kernel /DOS/HDD/RAZDELY/ADD2017/1.krn vga=791 quiet
+initrd /DOS/HDD/RAZDELY/ADD2017/1.fs /DOS/HDD/RAZDELY/ADD2017/1-1.fs
+
+title
+clear
+title
+clear
+title
+clear
+
+# ----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+# ------------------------------------------------------------------------------------------------------------------- PE
+
+iftitle [if exist /2k10/WINPE.LST] Мультизагрузочный 2k10 v.6.1
+configfile /2k10/WINPE.lst
+
+iftitle [if exist /SSTR/menu.lst] WinPE 10 Sergei Strelec (x86/x64) 2016.03.03
+find --set-root --ignore-floppies --ignore-cd /SSTR/bootmgr
+chainloader /SSTR/bootmgr
+
+iftitle [if exist /ILEX/SETUPLDR.BIN] LEX LIVE DX MEDIA 2011 06 05
+find --set-root /ILEX/SETUPLDR.BIN
+chainloader /ILEX/SETUPLDR.BIN
+
+title
+clear
+title
+clear
+title
+clear
+
+# ----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+# ---------------------------------------------------------------------------------------------------------------- UTILS
+
+title Работа с HDD
+configfile /boot/HDD.lst
+
+title Программы DOS
+configfile /boot/dos.lst
+
+title
+clear
+title
+clear
+title
+clear
+
+# ----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+# ----------------------------------------------------------------------------------------------------------------- EXIT
+
+title      Выключить ПК
+halt
+
+title      Перезагрузить ПК
+reboot
+
+# ----------------------------------------------------------------------------------------------------------------------
