@@ -1,0 +1,224 @@
+#------------------------------------------------------------------------------ set mod
+set $mod Mod4
+#--------------------------------------------------------------------------------------
+
+
+
+#--------------------------------------------------------------------------- font & app
+font pango:Terminus Re33 Bold 10.5
+
+new_window none
+new_float pixel 2
+
+workspace_layout tabbed
+
+#                          BORDER  BACKGROUND  TEXT    INDICATOR
+client.focused            #272822   #272822   #FD971F   #333333
+client.focused_inactive   #272822   #272822   #75715E   #000000
+client.unfocused          #272822   #272822   #75715E   #000000
+#--------------------------------------------------------------------------------------
+
+
+
+#---------------------------------------------------------------- drag floating windows
+floating_modifier $mod
+#--------------------------------------------------------------------------------------
+
+
+
+#---------------------------------------------------------------------------- shortcuts
+bindsym $mod+Shift+Return exec i3-sensible-terminal
+
+bindsym $mod+Shift+q kill
+
+bindsym $mod+d exec rofi -show run -font "Terminus Re33 Bold 11" -fg "#FFFFFF" -bg "#000000" -hlfg "#000000" -hlbg "#A6E22E" -bc "#A6E22E" -hide-scrollbar -o 85
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+h split h
+bindsym $mod+v split v
+
+bindsym $mod+f fullscreen toggle
+
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+bindsym $mod+Shift+space floating toggle
+
+bindsym $mod+space focus mode_toggle
+
+bindsym $mod+Shift+c reload
+
+bindsym $mod+Shift+r restart
+
+bindsym $mod+r mode "resize"
+
+bindsym $mod+t border toggle
+
+#bindsym $mod+l exec blurlock
+
+bindsym --release Print exec "scrot /home/sultanbaev/Yandex.Disk/Documents/_Shot/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png && mplayer /home/sultanbaev/Dropbox/_Important/_dotfiles/sounds/camera-shutter.mp3"
+bindsym --release Shift+Print exec "scrot -s /home/sultanbaev/Yandex.Disk/Documents/_Shot/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png  && mplayer /home/sultanbaev/Dropbox/_Important/_dotfiles/sounds/camera-shutter.mp3"
+
+#arch
+bindsym F12 exec amixer -c 0 set Master 2dB+
+bindsym F11 exec amixer -c 0 set Master 2dB-
+#--------------------------------------------------------------------------------------
+
+
+
+#------------------------------------------------------------------ switch to workspace
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7
+bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9
+bindsym $mod+0 workspace $WS10
+
+bindsym $mod+Shift+exclam move container to workspace $WS1
+bindsym $mod+Shift+at move container to workspace $WS2
+bindsym $mod+Shift+numbersign move container to workspace $WS3
+bindsym $mod+Shift+dollar move container to workspace $WS4
+bindsym $mod+Shift+percent move container to workspace $WS5
+bindsym $mod+Shift+asciicircum move container to workspace $WS6
+bindsym $mod+Shift+ampersand move container to workspace $WS7
+bindsym $mod+Shift+asterisk move container to workspace $WS8
+bindsym $mod+Shift+parenleft move container to workspace $WS9
+bindsym $mod+Shift+parenright move container to workspace $WS10
+
+set $WS1 "1: main"
+set $WS2 "2: web"
+set $WS3 "3: media"
+set $WS4 "4: file"
+set $WS5 "5: code"
+set $WS6 "6: vm"
+set $WS7 "7: b"
+set $WS8 "8: c"
+set $WS9 "9: d"
+set $WS10 "10: term"
+#--------------------------------------------------------------------------------------
+
+
+
+#------------------------------------------------------------------------------- resize
+mode "resize" {
+
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+#--------------------------------------------------------------------------------------
+
+
+
+#---------------------------------------------------------------------------------- bar
+bar {
+        status_command conky -c /home/sultanbaev/Dropbox/_Important/_dotfiles/conky/conky_bar
+        separator_symbol "-"
+        #tray_output primary
+
+
+
+        
+        colors {
+                   background           #272822
+                   statusline           #75715E
+
+                   focused_workspace    #272822   #272822   #FD971F
+                   inactive_workspace   #272822   #272822   #75715E
+                   active_workspace     #272822   #272822   #F92672
+        
+    }
+}
+#--------------------------------------------------------------------------------------
+
+
+
+#---------------------------------------------------------------------------- autostart
+
+exec --no-startup-id google-chrome-stable
+
+exec --no-startup-id feh --randomize --bg-scale /home/sultanbaev/Dropbox/_Documents/_Arch/*
+
+exec --no-startup-id guake
+
+exec --no-startup-id setxkbmap "us,ru" ",winkeys" "grp:alt_shift_toggle" "grp_led:scroll" "compose:rwin"
+
+exec --no-startup-id dropbox
+
+exec --no-startup-id yandex-disk-indicator
+
+#exec --no-startup-id dddd
+
+#exec --no-startup-id yandex-disk start && sleep 3 && sync
+
+
+#exec --no-startup-id x11vnc -forever -display :0
+
+#exec --no-startup-id pactl load-module module-simple-protocol-tcp rate=48000 format=s16le channels=2 source=alsa_output.pci-0000_00_1b.0.analog-stereo.monitor record=true port=5900 listen=192.168.1.5
+
+#exec --no-startup-id /home/sultanbaev/Dropbox/_Programs/Progs_w_deb/DeadBeef64/deadbeef --play-pause
+
+#--------------------------------------------------------------------------------------
+
+
+
+
+#---------------------------------------------------------------- xprop | grep WM_CLASS
+for_window [class="Lxappearance"] floating enable
+for_window [class="Galculator"] floating enabled
+for_window [class="galculator"] floating enabled
+
+for_window [class="Transmission-gtk"] floating enabled, move container to workspace "1: main"
+for_window [class="transmission-gtk"] floating enabled, move container to workspace "1: main"
+for_window [class="Skype"] floating enable, move container to workspace "1: main"
+for_window [class="TeamViewer"] floating enabled, move container to workspace "1: main"
+
+for_window [class="Firefox"] move container to workspace "2: web"
+for_window [class="Chromium"] move container to workspace "2: web", focus
+for_window [class="Google-chrome"] move container to workspace "2: web", focus
+for_window [class="Pale moon"] move container to workspace "2: web"
+
+for_window [class="Vkaudiosaver"] move container to workspace "3: media"
+for_window [class="Deadbeef"] move container to workspace "3: media"
+
+for_window [class="Doublecmd"] move container to workspace "4: file"
+for_window [class="Spacefm"] move container to workspace "4: file"
+
+for_window [class="Subl3"] move container to workspace "5: code"
+for_window [class="Sublime_text"] move container to workspace "5: code"
+for_window [class="sublime_text"] move container to workspace "5: code"
+
+for_window [class="VirtualBox"] move container to workspace "6: vm"
+
+for_window [class="Gimp"] move container to workspace "7: b"
+
+for_window [class="URxvt"] move container to workspace "10: term", workspace "10: term", focus
+for_window [class="urxvt"] move container to workspace "10: term", workspace "10: term", focus
+#--------------------------------------------------------------------------------------

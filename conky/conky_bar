@@ -10,4 +10,4 @@ color3 AE81FF
 
 TEXT
 
-${exec bash /home/sultanbaev/Dropbox/_Important/_dotfiles/scripts/deadbeef.sh}$uptime ::: ${cpu cpu0}% ${exec sensors | grep 'Core 0:' | cut -c18-19}'C ::: ${mem} ::: ${fs_free /} ::: ${exec yandex-disk status | grep 'Available:' | cut -c13-50} ${execpi 120 python /home/sultanbaev/gmail.py}${time %H:%M} :::${exec yandex-disk status | grep 'Sync progress:' | cut -c15-50}
+${exec bash /home/svvitaly/Dropbox/_Important/_dotfiles/scripts/deadbeef.sh}$uptime ::: ${cpu cpu0}% ${exec sensors | grep 'Core 0:' | cut -c17-18}'C ::: ${mem} ::: ${fs_free /} ::: ${exec yandex-disk status | grep 'Available:' | cut -c13-50} ${execpi 120 python /home/svvitaly/gmail.py}${time %H:%M} :::${exec yandex-disk status | grep 'Sync progress:' | cut -c15-50}
