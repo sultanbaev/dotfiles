@@ -1,5 +1,134 @@
+#---------------------------------------------------------------------------- autostart
+# exec --no-startup-id blueman-applet
+# exec_always --no-startup-id sbxkb
+# exec --no-startup-id start_conky_green
+# exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+# exec --no-startup-id pamac-tray
+# exec --no-startup-id start_conky_maia
+
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id nm-applet
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id clipit
+exec --no-startup-id xautolock -time 10 -locker blurlock
+exec_always --no-startup-id ff-theme-util
+exec_always --no-startup-id fix_xcursor
+
+exec --no-startup-id chromium
+exec --no-startup-id feh --randomize --bg-scale /home/svvitaly/Pictures/desktop_wallpapers/*
+exec --no-startup-id guake
+exec --no-startup-id setxkbmap "us,ru" ",winkeys" "grp:alt_shift_toggle" "grp_led:scroll" "compose:rwin"
+exec --no-startup-id dropbox
+exec --no-startup-id yandex-disk-indicator
+exec --no-startup-id /home/svvitaly/Dropbox/_Programs/Progs_w_deb/DeadBeef64/deadbeef --play-pause
+exec --no-startup-id /home/svvitaly/Dropbox/_Programs/Progs_w_deb/doublecmd64/doublecmd
+#--------------------------------------------------------------------------------------
+
+
+
+#---------------------------------------------------------------------------- shortcuts
+bindsym $mod+Return exec terminal
+
+bindsym $mod+Shift+q kill
+bindsym $mod+Ctrl+q --release exec --no-startup-id xkill
+
+bindsym $mod+d exec --no-startup-id dmenu_recency
+bindsym $mod+Ctrl+d exec --no-startup-id morc_menu
+
+bindsym $mod+Shift+F3 exec gksu pcmanfm
+
+bindsym --release Print exec "scrot /home/svvitaly/Yandex.Disk/Documents/_Shot/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png && mplayer /home/svvitaly/Dropbox/_Important/_dotfiles/sounds/camera-shutter.mp3"
+bindsym --release Shift+Print exec "scrot -s /home/svvitaly/Yandex.Disk/Documents/_Shot/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png  && mplayer /home/svvitaly/Dropbox/_Important/_dotfiles/sounds/camera-shutter.mp3"
+
+bindsym $mod+f fullscreen toggle
+
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+
+bindsym $mod+Ctrl+Right workspace next
+bindsym $mod+Ctrl+Left workspace prev
+
+bindsym $mod+l exec --no-startup-id blurlock
+
+bindsym $mod+m bar mode toggle
+bindsym $mod+r mode "resize"
+
+#--------------------------------------------
+
+bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
+bindsym $mod+F5 exec terminal -e 'mocp'
+bindsym $mod+t exec --no-startup-id pkill compton
+bindsym $mod+Ctrl+t exec --no-startup-id compton -b
+bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+h split h;exec notify-send 'tile horizontally'
+bindsym $mod+v split v;exec notify-send 'tile vertically'
+bindsym $mod+q split toggle
+
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+bindsym $mod+Shift+s sticky toggle
+
+bindsym $mod+a focus parent
+
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+#--------------------------------------------------------------------------------------
+
+
+
+#---------------------------------------------------------------------------------- bar
+bar {
+    i3bar_command i3bar
+    status_command conky -c /home/svvitaly/Dropbox/_Important/_dotfiles/conky/conky_bar
+    #status_command i3status
+    position bottom
+
+wheel_up_cmd workspace prev
+wheel_down_cmd workspace next
+
+## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
+#   tray_output primary
+#   tray_output eDP1
+
+    bindsym button4 nop
+    bindsym button5 nop
+    font xft:URWGothic-Book 11
+    #font pango:Terminus Re33 Bold 10.5
+    strip_workspace_numbers yes
+
+    colors {
+        background           #272822
+        statusline           #75715E
+        #separator           #454947
+
+        focused_workspace    #272822   #272822   #FD971F
+        inactive_workspace   #272822   #272822   #75715E
+        active_workspace     #272822   #272822   #F92672
+
+        binding_mode         #16a085   #2C2C2C   #F9FAF9
+        urgent_workspace     #16a085   #FDF6E3   #E5201D
+    }
+}
+#--------------------------------------------------------------------------------------
+
+
+
 #------------------------------------------------------------------------------ set mod
 set $mod Mod4
+floating_modifier $mod
 #--------------------------------------------------------------------------------------
 
 
@@ -24,87 +153,10 @@ client.focused_inactive   #272822   #272822   #75715E   #000000
 client.unfocused          #272822   #272822   #75715E   #000000
 
 
-  client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
+  #client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
   client.placeholder      #000000 #0c0c0c #ffffff #000000 
 
   client.background       #2B2C2B
-#--------------------------------------------------------------------------------------
-
-
-
-#---------------------------------------------------------------- drag floating windows
-floating_modifier $mod
-#--------------------------------------------------------------------------------------
-
-
-
-#---------------------------------------------------------------------------- shortcuts
-bindsym $mod+Return exec terminal
-
-bindsym $mod+Shift+q kill
-bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
-
-bindsym $mod+d exec --no-startup-id dmenu_recency
-bindsym $mod+z exec --no-startup-id morc_menu
-
-bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-
-bindsym $mod+F2 exec palemoon
-
-bindsym $mod+F3 exec pcmanfm
-bindsym $mod+Shift+F3 exec gksu pcmanfm
-# bindsym $mod+F3 exec ranger
-
-bindsym $mod+F5 exec terminal -e 'mocp'
-
-bindsym $mod+t exec --no-startup-id pkill compton
-bindsym $mod+Ctrl+t exec --no-startup-id compton -b
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-
-bindsym Print exec --no-startup-id i3-scrot
-bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-
-# focus_follows_mouse no
-
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
-bindsym $mod+h split h;exec notify-send 'tile horizontally'
-bindsym $mod+v split v;exec notify-send 'tile vertically'
-bindsym $mod+q split toggle
-
-bindsym $mod+f fullscreen toggle
-
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
-bindsym $mod+Shift+space floating toggle
-
-bindsym $mod+space focus mode_toggle
-
-bindsym $mod+Shift+s sticky toggle
-
-bindsym $mod+a focus parent
-
-bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+minus scratchpad show
-
-bindsym $mod+Ctrl+Right workspace next
-bindsym $mod+Ctrl+Left workspace prev
-
-bindsym $mod+9 exec --no-startup-id blurlock
-
-bindsym $mod+m bar mode toggle
-bindsym $mod+r mode "resize"
 #--------------------------------------------------------------------------------------
 
 
@@ -132,7 +184,7 @@ set $WS5 "5: code"
 set $WS6 "6: vm"
 set $WS7 "7: b"
 set $WS8 "8: c"
-#set $WS9 "9: d"
+set $WS9 "9: d"
 #set $WS10 "10: term"
 
 bindsym $mod+1 workspace $WS1
@@ -143,7 +195,7 @@ bindsym $mod+5 workspace $WS5
 bindsym $mod+6 workspace $WS6
 bindsym $mod+7 workspace $WS7
 bindsym $mod+8 workspace $WS8
-#bindsym $mod+9 workspace $WS9
+bindsym $mod+9 workspace $WS9
 #bindsym $mod+0 workspace $WS10
 
 bindsym $mod+Shift+exclam move container to workspace $WS1
@@ -154,7 +206,7 @@ bindsym $mod+Shift+percent move container to workspace $WS5
 bindsym $mod+Shift+asciicircum move container to workspace $WS6
 bindsym $mod+Shift+ampersand move container to workspace $WS7
 bindsym $mod+Shift+asterisk move container to workspace $WS8
-#bindsym $mod+Shift+parenleft move container to workspace $WS9
+bindsym $mod+Shift+parenleft move container to workspace $WS9
 #bindsym $mod+Shift+parenright move container to workspace $WS10
 #--------------------------------------------------------------------------------------
 
@@ -193,29 +245,26 @@ for_window [class="Xfburn"] floating enable
 
 
 #---------------------------------------------------------------- xprop | grep WM_CLASS
-for_window [class="Lxappearance"] floating enable
-for_window [class="Galculator"] floating enabled
 for_window [class="galculator"] floating enabled
 
-for_window [class="Transmission-gtk"] floating enabled, move container to workspace "1: main"
 for_window [class="transmission-gtk"] floating enabled, move container to workspace "1: main"
+for_window [class="Transmission-gtk"] floating enabled, move container to workspace "1: main"
 for_window [class="Skype"] floating enable, move container to workspace "1: main"
-for_window [class="TeamViewer"] floating enabled, move container to workspace "1: main"
 
-for_window [class="Firefox"] move container to workspace "2: web"
+for_window [class="Navigator"] move container to workspace "2: web"
 for_window [class="Chromium"] move container to workspace "2: web", focus
 for_window [class="Google-chrome"] move container to workspace "2: web", focus
 for_window [class="Pale moon"] move container to workspace "2: web"
 
-for_window [class="Vkaudiosaver"] move container to workspace "3: media"
+for_window [class="deadbeef"] move container to workspace "3: media"
 for_window [class="Deadbeef"] move container to workspace "3: media"
 
+for_window [class="doublecmd"] move container to workspace "4: file"
 for_window [class="Doublecmd"] move container to workspace "4: file"
-for_window [class="Spacefm"] move container to workspace "4: file"
+for_window [class="spacefm"] move container to workspace "4: file"
+for_window [class="Pcmanfm"] move container to workspace "4: file"
 
 for_window [class="Subl3"] move container to workspace "5: code"
-for_window [class="Sublime_text"] move container to workspace "5: code"
-for_window [class="sublime_text"] move container to workspace "5: code"
 
 for_window [class="VirtualBox"] move container to workspace "6: vm"
 
@@ -277,30 +326,6 @@ mode "resize" {
 
 
 
-#---------------------------------------------------------------------------- autostart
-# exec --no-startup-id blueman-applet
-# exec_always --no-startup-id sbxkb
-# exec --no-startup-id start_conky_green
-
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-exec --no-startup-id nm-applet
-exec --no-startup-id xfce4-power-manager
-#exec --no-startup-id pamac-tray
-exec --no-startup-id clipit
-#exec --no-startup-id start_conky_maia
-exec --no-startup-id xautolock -time 10 -locker blurlock
-exec_always --no-startup-id ff-theme-util
-exec_always --no-startup-id fix_xcursor
-
-exec --no-startup-id feh --randomize --bg-scale /home/svvitaly/Pictures/desktop_wallpapers/*
-exec --no-startup-id guake
-exec --no-startup-id setxkbmap "us,ru" ",winkeys" "grp:alt_shift_toggle" "grp_led:scroll" "compose:rwin"
-exec --no-startup-id dropbox
-
-#--------------------------------------------------------------------------------------
-
-
 #--------------------------------------------------------------------------------------
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
@@ -336,42 +361,6 @@ set_from_resource $term_color15    color15
 
 
 
-#--------------------------------------------------------------------------------------
-# Start i3bar to display a workspace bar (plus the system information i3status if available)
-bar {
-	i3bar_command i3bar
-	status_command i3status
-	position bottom
-
-wheel_up_cmd workspace prev
-wheel_down_cmd workspace next
-
-
-## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-#	tray_output primary
-#	tray_output eDP1
-
-	bindsym button4 nop
-	bindsym button5 nop
-#   font xft:URWGothic-Book 11
-	strip_workspace_numbers yes
-
-    colors {
-
-        
-
-	background           #272822
-	statusline           #75715E
-	#separator #454947
-
-        focused_workspace    #272822   #272822   #FD971F
-        inactive_workspace   #272822   #272822   #75715E
-        active_workspace     #272822   #272822   #F92672
-
-        binding_mode       #16a085 #2C2C2C #F9FAF9
-        urgent_workspace   #16a085 #FDF6E3 #E5201D
-    }
-}
 
 
 
