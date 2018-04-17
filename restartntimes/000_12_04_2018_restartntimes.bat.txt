@@ -1,0 +1,23 @@
+if exist %systemdrive%\rstrt.3rd goto tixe
+if exist %systemdrive%\rstrt.2nd goto rstrt3rd
+if exist %systemdrive%\rstrt.1st goto rstrt2nd
+
+:rstrt1st
+echo first restart is done > %systemdrive%\rstrt.1st
+goto cnsl
+
+
+:rstrt2nd
+echo second restart is done > %systemdrive%\rstrt.2nd
+goto cnsl
+
+
+:rstrt3rd
+echo third restart is done > %systemdrive%\rstrt.3rd
+goto cnsl
+
+:tixe
+del /q %0
+
+:cnsl
+shutdown -r -f -t 00

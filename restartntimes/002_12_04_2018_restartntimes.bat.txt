@@ -1,0 +1,44 @@
+set shutdowntimer  = 90
+set heavyloadtimer = 1
+
+
+if exist %systemdrive%\rstrt.5 goto tixe
+if exist %systemdrive%\rstrt.4 goto rstrt5
+if exist %systemdrive%\rstrt.3 goto rstrt4
+if exist %systemdrive%\rstrt.2 goto rstrt3
+if exist %systemdrive%\rstrt.1 goto rstrt2
+
+
+:rstrt1
+echo 1 > %systemdrive%\rstrt.1
+goto cnsl
+
+
+:rstrt2
+echo 2 > %systemdrive%\rstrt.2
+goto cnsl
+
+
+:rstrt3
+echo 3 > %systemdrive%\rstrt.3
+goto cnsl
+
+
+:rstrt4
+echo 4 > %systemdrive%\rstrt.4
+goto cnsl
+
+
+:rstrt5
+echo 5 > %systemdrive%\rstrt.5
+goto cnsl
+
+
+:tixe
+del /q %systemdrive%\rstrt.*
+del /q %0
+
+
+:cnsl
+shutdown -r -f -t %shutdowntimer%
+cmd /k "%systemdrive%\HeavyLoad-x86\HeavyLoad.exe /CPU /MEMORY /FILE /GPU /TREESIZE /DURATION %heavyloadtimer% /AUTOEXIT /START"

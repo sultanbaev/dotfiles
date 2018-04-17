@@ -8,7 +8,7 @@ art_title = '/home/svvitaly/Dropbox/_Programs/Progs_w_deb/DeadBeef64/deadbeef --
 #done
 
 if [ "$(art_title)" != 'nothing' ]; then
-        echo ""$(/home/svvitaly/Dropbox/_Programs/Progs_w_deb/DeadBeef64/deadbeef --nowplaying "%a - %t")"" "::: "
+        echo ""$(/home/svvitaly/Dropbox/_Programs/Progs_w_deb/DeadBeef64/deadbeef --nowplaying "%a - %t")"" "   ::: "
         else
         	echo " "
 fi
