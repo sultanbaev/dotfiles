@@ -114,3 +114,14 @@ fi
 
 PS1='\[\e[0;32m\]\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]>>>>>>>>>>>>>>>>>>>>\[\e[m\] \[\e[1;37m\]'
 bash /home/midi/Yandex.Disk/Important/_dotfiles/scripts/colors.sh
+
+alias yt="youtube-dl -x --audio-format "mp3" --audio-quality 0"
+
+alias nd="sudo rmmod r8169"
+alias nu="sudo modprobe r8169"
+alias ndu="sudo rmmod r8169 && sudo modprobe r8169"
+
+alias inst="sudo apt-get install"
+alias deb="sudo dpkg -i"
+
+alias yd="watch -n 3 yandex-disk status"

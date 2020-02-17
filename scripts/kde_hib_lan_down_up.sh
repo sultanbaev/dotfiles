@@ -1,4 +1,4 @@
 #!/bin/sh
 # This is a comment!
 
-sudo ifconfig enp3s0 down && sudo ifconfig enp3s0 up
+sudo rmmod r8169 && sudo modprobe r8169
