@@ -1,0 +1,8 @@
+map --hook
+ls (0xff)/ && root (0xff)
+ls (0xff)/I386/ && cat --locate=rdisk(1) --replace=rdisk(0) (0xff)/I386/TXTSETUP.SIF
+ls (0xff)/AMD64/ && cat --locate=rdisk(1) --replace=rdisk(0) (0xff)/AMD64/TXTSETUP.SIF
+ls (0xff)/ && chainloader /I386/SETUPLDR.BIN
+ls (0xff)/ || rootnoverify (hd0)
+ls (0xff)/ || chainloader (hd0)+1
+boot

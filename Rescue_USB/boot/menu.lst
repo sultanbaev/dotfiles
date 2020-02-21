@@ -168,7 +168,7 @@ iftitle [if exist /linux/q4os-32-bit/live/vmlinuz] Q4OS 32bit
 kernel /linux/q4os-32-bit/live/vmlinuz apic=off irqpoll boot=live config live-media-path=/linux/q4os-32-bit/live/
 initrd /linux/q4os-32-bit/live/initrd.img
 
-iftitle [if exist /linux/q4os-64-bit/live/vmlinuz] Q4OS KDE 64bit
+iftitle [if exist /linux/q4os-64-bit/live/vmlinuz] q4os-3.10-x64.r2
 kernel /linux/q4os-64-bit/live/vmlinuz apic=off irqpoll boot=live config live-media-path=/linux/q4os-64-bit/live/
 initrd /linux/q4os-64-bit/live/initrd.img
 
@@ -192,9 +192,9 @@ iftitle [if exist /linux/inquisitor/initrd.img-2.6.26-2-686] Inquisitor
 kernel /linux/inquisitor/vmlinuz-2.6.26-2-686 boot=live noautologin nolocales hostname=inq union=aufs
 initrd	/linux/inquisitor/initrd.img-2.6.26-2-686
 
-iftitle [if exist /linux/elementaryos64/casper/vmlinuz] Elementary OS 64bit
-find --set-root /linux/elementaryos64/elementaryos-0.4.1-stable.20180214.iso
-kernel /linux/elementaryos64/casper/vmlinuz file=/cdrom/preseed/ubuntu.seed boot=casper persistent iso-scan/filename=/linux/elementaryos64/elementaryos-0.4.1-stable.20180214.iso splash
+iftitle [if exist /linux/elementaryos64/casper/vmlinuz] elementaryos-5.1-stable.20200204
+find --set-root /linux/elementaryos64/elementaryos-5.1-stable.20200204.iso
+kernel /linux/elementaryos64/casper/vmlinuz file=/cdrom/preseed/ubuntu.seed boot=casper persistent iso-scan/filename=/linux/elementaryos64/elementaryos-5.1-stable.20200204.iso splash
 initrd /linux/elementaryos64/casper/initrd.lz
 
 iftitle [if exist /linux/elementaryosbeta/casper/vmlinuz] Elementary OS 64bit beta

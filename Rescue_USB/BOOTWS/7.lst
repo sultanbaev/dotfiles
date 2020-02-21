@@ -1,0 +1,15 @@
+map (hd0) (hd6)
+map (hd1) (hd0)
+map (hd2) (hd1)
+map (hd3) (hd2)
+map (hd4) (hd3)
+map (hd5) (hd4)
+map (hd6) (hd5)
+map --hook
+ls (0xff)/ && root (0xff)
+ls (0xff)/I386/ && cat --locate=rdisk(1) --replace=rdisk(6) (0xff)/I386/TXTSETUP.SIF
+ls (0xff)/AMD64/ && cat --locate=rdisk(1) --replace=rdisk(6) (0xff)/AMD64/TXTSETUP.SIF
+ls (0xff)/ && chainloader /I386/SETUPLDR.BIN
+ls (0xff)/ || rootnoverify (hd0)
+ls (0xff)/ || chainloader (hd0)+1
+boot

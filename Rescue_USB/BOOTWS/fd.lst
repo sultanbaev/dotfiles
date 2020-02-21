@@ -1,0 +1,7 @@
+checkrange 0x01 read 0x8280 && map (fd1) (fd0)
+map --hook
+ls (0xff)/ && root (0xff)
+ls (0xff)/ && chainloader /I386/SETUPLDR.BIN
+ls (0xff)/I386/ && cat --locate=rdisk(1)partition(1) --replace=fdisk(0)partition(0) (0xff)/I386/TXTSETUP.SIF
+ls (0xff)/AMD64/ && cat --locate=rdisk(1)partition(1) --replace=fdisk(0)partition(0) (0xff)/AMD64/TXTSETUP.SIF
+boot
