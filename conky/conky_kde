@@ -1,0 +1,28 @@
+ conky.config = {
+    own_window = true,
+    own_window_transparent = true,
+    own_window_argb_visual = true,
+    own_window_argb_value = 0,
+    own_window_class = 'desktop',
+    own_window_type = 'dock',
+    use_xft = true,
+    font = 'Monospace:size=10',
+    xftalpha = 0.7,
+    update_interval = 5,
+    default_color = '#272822',
+    double_buffer = true,
+    alignment = 'bottom_left',
+    
+    gap_x = 1000, 
+    gap_y = -5, 
+ }
+ 
+ conky.text = [[
+ #${exec yandex-disk status}
+ #double_buffer = true,
+ #default_shade_color = '#FFFFFF',
+ #default_color = '#000000',
+ #xftalpha = 0.7,
+ #use_xft = true,
+ ${exec yandex-disk status | grep 'Sync progress:' | cut -c1-50}
+ ]]

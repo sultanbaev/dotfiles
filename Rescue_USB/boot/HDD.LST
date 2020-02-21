@@ -1,0 +1,134 @@
+﻿# Название подменю в шапке
+write (md)0x220+1 !BAT\necho -n -P:0000 %hdrcolor% +++++Работа с HDD+++++ \0 && initscript (md)0x220+1 
+
+title     <<<< Вернуться в главное меню\n\n\n                    Вернуться в главное меню.
+configfile /boot/menu.lst
+
+
+title
+clear
+
+
+title Acronis True Image Enterprise Server + UR v.9.7.8398 (Russian)\n\n True Image решает проблему резервного копирования информации - как отдельных\n файлов и папок, так и целых дисков или их разделов. В случае какого-либо сбоя,\n вы легко сможете восстановить работу системы и утраченную информацию.
+kernel /HDD/ATIEES/KERNEL.DAT /s ramdisk_size=81920 mbrcrcs=on vga=788 splash=silent quiet
+initrd /HDD/ATIEES/RAMDISK.DAT
+
+title Acronis TIES + UR v.9.7.8398 + доп. параметры\n   Загрузка ядра Linux в специальном режиме. Используйте, если в стандартном\n режиме работа программы невозможна. Позволяет вручную ввести необходимые\n параметры, например, отключить подсистемы ACPI, APIC, поддержку USB или\n FireWire, запустить видеорежим с низким качеством графики (8 бит).
+set opt=vga=785
+echo     ENTER для загрузки, или введите нужные параметры (через пробел) + ENTER.
+echo -------------------------------------------------------------------------------
+echo acpi=off  - отключить подсистему ACPI
+echo noapic    - отключить подсистему APIC
+echo nousb     - отключить поддержку USB
+echo nofw      - отключить поддержку интерфейса FireWire (IEEE1394)
+echo nopcmcia  - отключить обнаружение устройств стандарта PCMCIA
+echo nodma     - отключить режим DMA для всех IDE-дисков
+echo nomouse   - отключить поддержку мышки 
+echo LowGrafic - включить 8-битовый графический режим
+echo vga=785   - видеорежим 640x480 (vga=788 - 800х600, vga=791 - 1024х768)
+echo vga=ask   - выбрать видеорежим из доступных в процессе запуска
+set /p opt=boot:
+echo -------------------------------------------------------------------------------
+echo Старт с параметрами: /s %opt% ramdisk_size=81920 mbrcrcs=on splash=silent quiet
+kernel /HDD/ATIEES/KERNEL.DAT /s %opt% ramdisk_size=81920 mbrcrcs=on splash=silent quiet
+initrd /HDD/ATIEES/RAMDISK.DAT
+
+title Acronis True Image Premium 2014 v.17.0.6673 (Russian)\n Программа для полного резервного копирования, позволяющая создавать точные\n образы жесткого диска и/или отдельных разделов. Образ диска, включающий \n абсолютно все данные, приложения и ОС, может быть в любой момент восстановлен\n на жесткий диск. Включает в себя драйвера для USB и SCSI жестких дисков.
+kernel /HDD/ATIH2014/KERNEL.DAT /s mbrcrcs=on vga=791 /skipboot splash=silent quiet
+initrd /HDD/ATIH2014/RAMDISK.DAT
+
+title Acronis TI Premium 2014 v.17.0.6673 + доп. параметры\n   Загрузка ядра Linux в специальном режиме. Используйте, если в стандартном\n режиме работа программы невозможна. Позволяет вручную ввести необходимые\n параметры, например, отключить подсистемы ACPI, APIC, поддержку USB или\n FireWire, запустить видеорежим с низким качеством графики (8 бит).
+set opt=vga=791
+echo     ENTER для загрузки, или введите нужные параметры (через пробел) + ENTER.
+echo -------------------------------------------------------------------------------
+echo acpi=off  - отключить подсистему ACPI
+echo noapic    - отключить подсистему APIC
+echo nousb     - отключить поддержку USB
+echo nofw      - отключить поддержку интерфейса FireWire (IEEE1394)
+echo nopcmcia  - отключить обнаружение устройств стандарта PCMCIA
+echo nodma     - отключить режим DMA для всех IDE-дисков
+echo nomouse   - отключить поддержку мышки 
+echo LowGrafic - включить 8-битовый графический режим
+echo vga=791   - видеорежим 1024x768 (vga=788 - 800х600)
+echo vga=ask   - выбрать видеорежим из доступных в процессе запуска
+set /p opt=boot:
+echo -------------------------------------------------------------------------------
+echo Старт с параметрами: /s %opt% ramdisk_size=81920 mbrcrcs=on quiet
+kernel /HDD/ATIH2014/KERNEL.DAT /s %opt% /skipboot mbrcrcs=on quiet
+initrd /HDD/ATIH2014/RAMDISK.DAT
+
+title Acronis Backup & Recovery Advanced v.11.5.39029 (Russian)\n Программа для резервного копирования и аварийного восстановления рабочих\n станций и ноутбуков под управлением Windows в физических и виртуальных средах.\n Позволяет установить агенты резервного копирования и восстановления (если есть\n в папке Recovery Manager в корне диска).
+kernel /HDD/ABRW_11/KERNEL.DAT product=bootagent media_for_windows vga=791 quiet
+initrd /HDD/ABRW_11/RAMDISK.DAT
+
+title Acronis B&R Advanced v.11.5.39029 + доп. параметры\n   Загрузка ядра Linux в специальном режиме. Используйте, если в стандартном\n режиме работа программы невозможна. Позволяет вручную ввести необходимые\n параметры, например, отключить подсистемы ACPI, APIC, поддержку USB или\n FireWire, запустить видеорежим с низким качеством графики (8 бит).
+set opt=vga=791
+echo     ENTER для загрузки, или введите нужные параметры (через пробел) + ENTER.
+echo -------------------------------------------------------------------------------
+echo acpi=off  - отключить подсистему ACPI
+echo noapic    - отключить подсистему APIC
+echo nousb     - отключить поддержку USB
+echo nofw      - отключить поддержку интерфейса FireWire (IEEE1394)
+echo nopcmcia  - отключить обнаружение устройств стандарта PCMCIA
+echo nodma     - отключить режим DMA для всех IDE-дисков
+echo nomouse   - отключить поддержку мышки 
+echo LowGrafic - включить 8-битовый графический режим
+echo vga=791   - видеорежим 1024x768 (vga=788 - 800х600)
+echo vga=ask   - выбрать видеорежим из доступных в процессе запуска
+set /p opt=boot:
+echo -------------------------------------------------------------------------------
+echo Старт с параметрами: %opt% product=bootagent media_for_windows quiet
+kernel /HDD/ABRW_11/KERNEL.DAT %opt% product=bootagent media_for_windows quiet
+initrd /HDD/ABRW_11/RAMDISK.DAT
+
+title Acronis Disk Director Server v.10.2169 (Russian)\n ADDS - простая и удобная в использовании программа для управления разделами и\n обслуживания жестких дисков. Она включает все наиболее популярные функции \n управления дисками, инструменты восстановления разделов и утилиту управления \n загрузочными разделами.
+kernel /HDD/ADDS_10/KERNEL.DAT /s ramdisk_size=40960 mbrcrcs=on vga=788 quiet
+initrd /HDD/ADDS_10/RAMDISK.DAT
+
+title Acronis DDS v.10.2169 + доп. параметры\n   Загрузка ядра Linux в специальном режиме. Используйте, если в стандартном\n режиме работа программы невозможна. Позволяет вручную ввести необходимые\n параметры, например, отключить подсистемы ACPI, APIC, поддержку USB или\n FireWire, запустить видеорежим с низким качеством графики (8 бит).
+set opt=vga=785
+echo     ENTER для загрузки, или введите нужные параметры (через пробел) + ENTER.
+echo -------------------------------------------------------------------------------
+echo acpi=off  - отключить подсистему ACPI
+echo noapic    - отключить подсистему APIC
+echo nousb     - отключить поддержку USB
+echo nofw      - отключить поддержку интерфейса FireWire (IEEE1394)
+echo nopcmcia  - отключить обнаружение устройств стандарта PCMCIA
+echo nodma     - отключить режим DMA для всех IDE-дисков
+echo nomouse   - отключить поддержку мышки 
+echo LowGrafic - включить 8-битовый графический режим
+echo vga=785   - видеорежим 640x480 (vga=788 - 800х600, vga=791 - 1024х768)
+echo vga=ask   - выбрать видеорежим из доступных в процессе запуска
+set /p opt=boot:
+echo -------------------------------------------------------------------------------
+echo Старт с параметрами: /s %opt% ramdisk_size=40960 mbrcrcs=on quiet
+kernel /HDD/ADDS_10/KERNEL.DAT /s %opt% ramdisk_size=40960 mbrcrcs=on quiet
+initrd /HDD/ADDS_10/RAMDISK.DAT
+
+title Acronis Disk Director Home v.12.0.3223 (Russian)\n Комплексный программный пакет, включающий: менеджер разделов, позволяющий \n осуществлять любые операции с разделами Windows и Linux (создание, удаление,\n копирование, перемещение, изменение размеров, разделение и слияние без риска\n потери данных; и инструмент для восстановления разделов на жестком диске.
+kernel /HDD/ADDH_12/KERNEL.DAT /s ramdisk_size=98304 mbrcrcs=on vga=791 quiet
+initrd /HDD/ADDH_12/RAMDISK.DAT
+
+title Acronis DDH v.12.0.3223 + доп. параметры\n   Загрузка ядра Linux в специальном режиме. Используйте, если в стандартном\n режиме работа программы невозможна. Позволяет вручную ввести необходимые\n параметры, например, отключить подсистемы ACPI, APIC, поддержку USB или\n FireWire, запустить видеорежим с низким качеством графики (8 бит).
+set opt=vga=791
+echo     ENTER для загрузки, или введите нужные параметры (через пробел) + ENTER.
+echo -------------------------------------------------------------------------------
+echo acpi=off  - отключить подсистему ACPI
+echo noapic    - отключить подсистему APIC
+echo nousb     - отключить поддержку USB
+echo nofw      - отключить поддержку интерфейса FireWire (IEEE1394)
+echo nopcmcia  - отключить обнаружение устройств стандарта PCMCIA
+echo nodma     - отключить режим DMA для всех IDE-дисков
+echo nomouse   - отключить поддержку мышки 
+echo LowGrafic - включить 8-битовый графический режим
+echo vga=791   - видеорежим 1024x768 (vga=788 - 800х600)
+echo vga=ask   - выбрать видеорежим из доступных в процессе запуска
+set /p opt=boot:
+echo -------------------------------------------------------------------------------
+echo Старт с параметрами: /s %opt% ramdisk_size=98304 mbrcrcs=on quiet
+kernel /HDD/ADDH_12/KERNEL.DAT /s %opt% ramdisk_size=98304 mbrcrcs=on quiet
+initrd /HDD/ADDH_12/RAMDISK.DAT
+
+title Acronis Align Tool for WD/Hitachi v.2.0.154 (English)\n Align Tool (утилита выравнивания разделов) - средство, которое позволит\n достигнуть оптимальной производительности новых жестких дисков (4К sector),\n путём их правильной разбивки. Утилита оптимизирует расположение логических\n разделов относительно физической структуры хранения информации.
+kernel /HDD/ACR_AT/KERNEL.DAT vga=788 ramdisk_size=28672 acpi=off quiet
+initrd /HDD/ACR_AT/RAMDISK.DAT
