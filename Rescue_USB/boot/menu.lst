@@ -168,6 +168,14 @@ iftitle [if exist /linux/q4os-32-bit/live/vmlinuz] Q4OS 32bit
 kernel /linux/q4os-32-bit/live/vmlinuz apic=off irqpoll boot=live config live-media-path=/linux/q4os-32-bit/live/
 initrd /linux/q4os-32-bit/live/initrd.img
 
+iftitle [if exist /linux/q4os-64-bit/live/vmlinuz] Q4OS KDE 64bit
+kernel /linux/q4os-64-bit/live/vmlinuz apic=off irqpoll boot=live config live-media-path=/linux/q4os-64-bit/live/
+initrd /linux/q4os-64-bit/live/initrd.img
+
+iftitle [if exist /linux/ubuntu/casper/vmlinuz] Ubuntu 64bit
+kernel /linux/ubuntu/casper/vmlinuz live-media-path=/casper/ boot=casper splash iso-scan/filename=/linux/ubuntu/ubuntu-18.04.1-desktop-amd64.iso
+initrd /linux/ubuntu/casper/initrd.lz
+
 iftitle [if exist /linux/mint-xfce-32-bit/casper/vmlinuz] Linux Mint 32bit
 kernel /linux/mint-xfce-32-bit/casper/vmlinuz live-media-path=/casper/ boot=casper splash iso-scan/filename=/linux/mint-xfce-32-bit/linuxmint-18.2-xfce-32bit.iso
 initrd /linux/mint-xfce-32-bit/casper/initrd.lz
@@ -184,10 +192,15 @@ iftitle [if exist /linux/inquisitor/initrd.img-2.6.26-2-686] Inquisitor
 kernel /linux/inquisitor/vmlinuz-2.6.26-2-686 boot=live noautologin nolocales hostname=inq union=aufs
 initrd	/linux/inquisitor/initrd.img-2.6.26-2-686
 
-iftitle [if exist /linux/elementaryos/casper/vmlinuz] Elementary OS 64bit
-find --set-root /linux/elementaryos/elementaryos.iso
-kernel /linux/elementaryos/casper/vmlinuz file=/cdrom/preseed/ubuntu.seed boot=casper persistent iso-scan/filename=/linux/elementaryos/elementaryos.iso splash
-initrd /linux/elementaryos/casper/initrd.lz
+iftitle [if exist /linux/elementaryos64/casper/vmlinuz] Elementary OS 64bit
+find --set-root /linux/elementaryos64/elementaryos-0.4.1-stable.20180214.iso
+kernel /linux/elementaryos64/casper/vmlinuz file=/cdrom/preseed/ubuntu.seed boot=casper persistent iso-scan/filename=/linux/elementaryos64/elementaryos-0.4.1-stable.20180214.iso splash
+initrd /linux/elementaryos64/casper/initrd.lz
+
+iftitle [if exist /linux/elementaryosbeta/casper/vmlinuz] Elementary OS 64bit beta
+find --set-root /linux/elementaryosbeta/elementaryos-5.0-beta2.20180920.iso
+kernel /linux/elementaryosbeta/casper/vmlinuz file=/cdrom/preseed/ubuntu.seed boot=casper persistent iso-scan/filename=/linux/elementaryosbeta/elementaryos-5.0-beta2.20180920.iso splash
+initrd /linux/elementaryosbeta/casper/initrd.lz
 
 #iftitle [if exist /linux/manjaro_i3/boot/VMLINUZ_X86_64] Manjaro i3
 #kernel /linux/manjaro_i3/boot/VMLINUZ_X86_64
