@@ -1,7 +1,7 @@
 ﻿# Название подменю в шапке
 write (md)0x220+1 !BAT\necho -n -P:0000 %hdrcolor% +++++Rescue USB (All-In-One Edition) 1.0+++++ \0 && initscript (md)0x220+1 
 
-timeout=30 
+timeout=90 
 default 0
 # Путь к русскому шрифту для текстового режима.
 font /boot/rus.gz
@@ -9,19 +9,28 @@ font /boot/rus.gz
 #Разрешение экрана, возможные значения: -1 640; -1 800; -1 1024.
 #В данном случае подбирается максимально возможное разрешение поддерживаемое BIOS
 #Путь к картинке для текстового режима.Картинка обязательно в формате bmp!И обязательно установленного выше разрешения!
-graphicsmode -1 800
-    graphicsmode -1 640 && set GM=640 && echo 640 xres supported
-    graphicsmode -1 800 && set GM=800 && echo 800 xres supported
-    graphicsmode -1 1024 && set GM=1024 && echo 1024 xres supported
-    pause --wait=1
-    if "%GM%"=="1024" splashimage /boot/fon1024.bmp
-    if "%GM%"=="800" splashimage /boot/fon800.bmp
-    if "%GM%"=="640" splashimage /boot/fon640.bmp
+#graphicsmode -1 800
+graphicsmode -1 640
+    #graphicsmode -1 640 && set GM=640 && echo 640 xres supported
+    #graphicsmode -1 800 && set GM=800 && echo 800 xres supported
+    #graphicsmode -1 1024 && set GM=1024 && echo 1024 xres supported
+    #pause --wait=1
+    #if "%GM%"=="1024" splashimage /boot/fon1024.bmp
+    #if "%GM%"=="800" splashimage /boot/fon800.bmp
+    #if "%GM%"=="640" splashimage /boot/fon640.bmp
 
-color normal=0x01 highlight=0x9 helptext=0x1 heading=0x01 standard=0x1 border=0x1
+color normal=0x07 highlight=0x9 helptext=0x7 heading=0x07 standard=0x7 border=0x7
 
 
-title     Загрузка с жесткого диска \n                   Загрузка Windows с жесткого диска.
+
+
+
+
+
+
+# ------------------------------------------------------------------------------------------------------------------ HDD
+
+title      Загрузка с жесткого диска
 find --set-root --ignore-floppies --ignore-cd /bootmgr || find --set-root --ignore-floppies --ignore-cd /ntldr
 map (hd0) (hd1)
 map (hd1) (hd0)
@@ -29,78 +38,303 @@ map --hook
 rootnoverify (hd0)
 chainloader (hd0)+1
 
-
+title
+clear
+title
+clear
 title
 clear
 
-
-title ===============Windows===============
-clear
+# ----------------------------------------------------------------------------------------------------------------------
 
 
-iftitle [if exist /unib/bootunib] Установка Windows 7|8.1|10 от m0nkrus \n  Windows 10 (v1511) RUS-ENG x86-x64 -22in1- (AIO)  \n  Windows 8.1 with Update 3 RUS-ENG x86-x64 -16in1- Activated (AIO) \n  Windows 7 SP1 RUS-ENG x86-x64 -18in1- Activated v5 (AIO)
-chainloader /unib/bootunib
 
 
-iftitle [if exist /linux/slitaz-4.0.iso] ================Linux================
-clear
 
-iftitle [if exist /linux/slitaz-4.0.iso] SliTaz 4.0 \n SliTaz - свободная операционная система с открытыми исходниками. \n Это полнофункциональный рабочий стол или сервер размером менее чем 40 МБ. \n Система проста в использовании, быстрая, безопасная и стабильная.
-map --mem --heads=0 --sectors-per-track=0 /linux/slitaz-4.0.iso (hd32)
+
+
+
+# ---------------------------------------------------------------------------------------------------------------- TESTS
+
+iftitle [if exist /_/_rescueusb/HDDREG.ISO] HDD Regenerator
+find --set-root --ignore-floppies /_/_rescueusb/HDDREG.ISO
+map --mem /_/_rescueusb/HDDREG.ISO (0xff)
+map --hook
+chainloader (0xff)
+
+iftitle [if exist /_/_rescueusb/MT501.ISO] MemTest
+find --set-root --ignore-floppies /_/_rescueusb/MT501.ISO
+map --mem /_/_rescueusb/MT501.ISO (0xff)
+map --hook
+chainloader (0xff)
+
+iftitle [if exist /_/_rescueusb/VCR35R.ISO] Victoria
+find --set-root --ignore-floppies /_/_rescueusb/VCR35R.ISO
+map --mem /_/_rescueusb/VCR35R.ISO (0xff)
+map --hook
+chainloader (0xff)
+
+iftitle [if exist /_/_rescueusb/Qtpro580.IMG] QuickTech Pro
+find --set-root /grldr
+kernel /_/_rescueusb/memdisk
+initrd /_/_rescueusb/Qtpro580.IMG
+
+iftitle [if exist /_/_rescueusb/hdat2cd_lite_60b7.iso] HDAT2 lite 
+map (hd0,0)/_/_rescueusb/hdat2cd_lite_60b7.iso (hd32)
 map --hook
 root (hd32)
 chainloader (hd32)
 boot
 
-iftitle [if exist /puppy_tahr_6.0.2.sfs] Puppy Linux 6.0.2 \n Puppy Linux - маленький, быстрый и функциональный дистрибутив Linux. \n Размер дистрибутива всего около 200Мб. Содержит большой набор установленных \n программ и имеет полноценный графический интерфейс. Умеет запускаться с LiveCD \n и работать полностью из оперативной памяти. Не требователен к ресурсам компьютера.
-kernel (hd0,0)/linux/puppy/vmlinuz ramdisk_=100000
-initrd /linux/puppy/initrd.gz
+iftitle [if exist /_/_rescueusb/CHECKIT7.GZ] CheckIt Pro v.7.1.2
+find --set-root --ignore-floppies --ignore-cd /_/_rescueusb/CHECKIT7.GZ
+map --mem /_/_rescueusb/CHECKIT7.GZ (0xff)
+map --hook
+root (0xff)
+chainloader (0xff)
 
-iftitle [if exist /linux/runtu/vmlinuz] Runtu LITE 14.04.1 x86 \n Легковесный дистрибутив с Openbox на базе Ubuntu. \n Собран с помощью debootstrap, доустановлены средства базового конфигурирования рабочего окружения и основные программы.\n Рекомендован для аппаратных конфигураций, которые не поддерживают системные требования актуальных версий DE.
-kernel /linux/runtu/vmlinuz live-media-path=/casper/ boot=casper splash iso-scan/filename=/linux/runtu/runtu-lite-14.04.1_20140914.iso
-initrd /linux/runtu/initrd.lz
+iftitle [if exist /_/_rescueusb/konboot.img] Kon-Boot v.2.5
+map --mem /_/_rescueusb/konboot.img (fd0)
+map --hook
+chainloader (fd0)+1
+rootnoverify (fd0)
+map --floppies=1
+boot
 
-iftitle [if exist /linux/lubuntu/vmlinuz] Lubuntu 14.04.1 x86 \n Lubuntu - это свободная операционная система на базе Ubuntu Linux. \n Основное отличие Lubuntu - малые требования к ресурсам компьютера \n за счет использования среды рабочего стола LXDE.
-kernel /linux/lubuntu/vmlinuz live-media-path=/casper/ boot=casper splash iso-scan/filename=/linux/lubuntu/lubuntu-14.04.1-desktop-i386.iso
-initrd /linux/lubuntu/initrd.lz
+iftitle [if exist /_/_rescueusb/DBAN-2.3.0.iso] Darik's Boot and Nuke
+find --set-root --ignore-floppies /_/_rescueusb/DBAN-2.3.0.iso
+map --mem /_/_rescueusb/DBAN-2.3.0.iso (0xff)
+map --hook
+chainloader (0xff)
 
-iftitle [if exist /linux/mint/vmlinuz] Linux Mint 17.1 Cinnamon x64 \n Mint - это простой, удобный и элегантный дистрибутив GNU/ Linux, \n основанный на Ubuntu. Уже довольно продолжительное время стабильно \n держится в тройке самых популярных Linux-дистрибутивов мира.
-kernel /linux/mint/vmlinuz live-media-path=/casper/ boot=casper splash iso-scan/filename=/linux/mint/linuxmint-17.1-cinnamon-64bit.iso
-initrd /linux/mint/initrd.lz
+iftitle [if exist /_/_rescueusb/Spinrite.iso] SpinRite 6.0
+find --set-root --ignore-floppies /_/_rescueusb/Spinrite.iso
+map --mem /_/_rescueusb/Spinrite.iso (0xff)
+map --hook
+chainloader (0xff)
 
 
-title ===============Live CD===============
+title
+clear
+title
+clear
+title
 clear
 
+# ----------------------------------------------------------------------------------------------------------------------
 
-iftitle [if exist /2k10/WINPE.LST] Мультизагрузочный 2k10 v.6.1 >>> \n  C9PE MultiMedia 2k10 Native Edition  C9PE MultiMedia 2k10 Plus Pack\n    WinPE 7x86|64 Live (@Xemom1) Special Edition 2k10  \n  WinPE 8x86|64 Live (@Xemom1) Special Edition 2k10 MultiMedia \n WinPE 10x64 Live (@Xemom1)
+
+
+
+
+
+
+
+# -------------------------------------------------------------------------------------------------------------- WINDOWS
+
+iftitle [if exist /WINSETUP/XPpSP3.ISO] Установка Windows XP
+map --unmap=0:0xff
+map --unhook
+savedefault
+find --set-root --ignore-cd /usbdrive.tag
+configfile /winsetup.lst
+
+iftitle [if exist /bootmgr7] Установка Windows 7
+find --set-root --ignore-floppies /bootmgr7
+chainloader /bootmgr7
+
+iftitle [if exist /unib/bootunib] Установка Windows 7, 8, 10
+chainloader /unib/bootunib
+
+title
+clear
+title
+clear
+title
+clear
+
+# ----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+# ---------------------------------------------------------------------------------------------------------------- LINUX
+
+iftitle [if exist /linux/q4os-32-bit/live/vmlinuz] Q4OS 32bit
+kernel /linux/q4os-32-bit/live/vmlinuz apic=off irqpoll boot=live config live-media-path=/linux/q4os-32-bit/live/
+initrd /linux/q4os-32-bit/live/initrd.img
+
+iftitle [if exist /linux/mint-xfce-32-bit/casper/vmlinuz] Linux Mint 32bit
+kernel /linux/mint-xfce-32-bit/casper/vmlinuz live-media-path=/casper/ boot=casper splash iso-scan/filename=/linux/mint-xfce-32-bit/linuxmint-18.2-xfce-32bit.iso
+initrd /linux/mint-xfce-32-bit/casper/initrd.lz
+
+iftitle [if exist /linux/kolibrios/kolibri.img] Kolibri OS
+kernel /linux/kolibrios/HD_Load/memdisk
+initrd /linux/kolibrios/kolibri.img
+
+iftitle [if exist /linux/puppy-32-bit/vmlinuz] Puppy Linux 32bit
+kernel /linux/puppy-32-bit/vmlinuz
+initrd /linux/puppy-32-bit/initrd.gz
+
+iftitle [if exist /linux/inquisitor/initrd.img-2.6.26-2-686] Inquisitor
+kernel /linux/inquisitor/vmlinuz-2.6.26-2-686 boot=live noautologin nolocales hostname=inq union=aufs
+initrd	/linux/inquisitor/initrd.img-2.6.26-2-686
+
+iftitle [if exist /linux/elementaryos/casper/vmlinuz] Elementary OS 64bit
+find --set-root /linux/elementaryos/elementaryos.iso
+kernel /linux/elementaryos/casper/vmlinuz file=/cdrom/preseed/ubuntu.seed boot=casper persistent iso-scan/filename=/linux/elementaryos/elementaryos.iso splash
+initrd /linux/elementaryos/casper/initrd.lz
+
+#iftitle [if exist /linux/manjaro_i3/boot/VMLINUZ_X86_64] Manjaro i3
+#kernel /linux/manjaro_i3/boot/VMLINUZ_X86_64
+#initrd /linux/manjaro_i3/boot/INITRAMFS_X86_64.IMG
+#kernel /linux/manjaro_i3/BOOT/VMLINUZ_X86_64
+#initrd /linux/manjaro_i3/BOOT/INTEL_UCODE.IMG /linux/manjaro_i3/BOOT/INITRAMFS_X86_64.IMG
+
+iftitle [if exist /linux/tails/live/vmlinuz] Tails 64bit
+kernel /linux/tails/live/vmlinuz boot=live config live-media-path=/linux/tails/live/
+initrd /linux/tails/live/initrd.img
+
+iftitle [if exist /LINUX/PMAGIC/initrd.img] Parted Magic 32bit
+find --set-root --ignore-floppies --ignore-cd /LINUX/PMAGIC/bzImage
+kernel /LINUX/PMAGIC/bzImage edd=on directory=/LINUX vga=normal boot=live eject=no vmalloc=512MiB
+initrd /LINUX/PMAGIC/initrd.img /LINUX/PMAGIC/fu.img /LINUX/PMAGIC/m32.img
+
+iftitle [if exist /LINUX/PMAGIC/initrd.img] Parted Magic 64bit
+find --set-root --ignore-floppies --ignore-cd /LINUX/PMAGIC/bzImage64
+kernel /LINUX/PMAGIC/bzImage64 edd=on directory=/LINUX vga=normal boot=live eject=no vmalloc=512MiB
+initrd /LINUX/PMAGIC/initrd.img /LINUX/PMAGIC/fu.img /LINUX/PMAGIC/m64.img
+
+#title  Linux Mint 18.2 MATE/Sonya/ x32\n
+#find --set-root --ignore-floppies --ignore-cd /linux/mint/x32/linuxmint-x86.iso
+#kernel /linux/mint/x32/vmlinuz boot=casper iso-scan/filename=/linux/mint/x32/linuxmint-x86.iso persistent persistent-path=/linux/mint/x32/ locale=ru_RU console-setup/layoutcode=ru noprompt noeject
+#initrd /linux/mint/x32/initrd.lz
+
+#title  Linux Ubuntu 16.04.3 LTS Xenial Xerus(Desktop) x32\n
+#find --set-root --ignore-floppies --ignore-cd /linux/ubuntu16/x32/ubuntu-16x86.iso
+#kernel /linux/ubuntu16/x32/vmlinuz boot=casper iso-scan/filename=/linux/ubuntu16/x32/ubuntu-16x86.iso persistent persistent-path=/linux/ubuntu16/x32/ locale=ru_RU console-setup/layoutcode=ru noprompt noeject
+#initrd /linux/ubuntu16/x32/initrd.lz
+
+iftitle [if exist /LINUX/centos/isolinux/vmlinuz0] CentOS
+kernel /LINUX/centos/isolinux/vmlinuz0 root=live:CDLABEL=svvitalyh live_dir=/LINUX/centos/LiveOS rootfstype=auto ro liveimg quiet nodiskmount nolvmmount  rhgb vga=791 rd.luks=0 rd.md=0 rd.dm=0  
+initrd /LINUX/centos/isolinux/initrd0.img 
+
+title
+clear
+title
+clear
+title
+clear
+
+# ----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+# -------------------------------------------------------------------------------------------------------------- ACRONIS
+
+iftitle [if exist /_/_rescueusb/ATI2017/1.krn] Acronis True Image 2017
+find --set-root --ignore-floppies --ignore-cd /_/_rescueusb/ATI2017/1.krn
+kernel /_/_rescueusb/ATI2017/1.krn vga=791 quiet
+initrd /_/_rescueusb/ATI2017/1.fs /_/_rescueusb/ATI2017/1-1.fs
+
+iftitle [if exist /_/_rescueusb/ADD2017/1.krn] Acronis Disk Director 2017
+find --set-root --ignore-floppies --ignore-cd /_/_rescueusb/ADD2017/1.krn
+kernel /_/_rescueusb/ADD2017/1.krn vga=791 quiet
+initrd /_/_rescueusb/ADD2017/1.fs /_/_rescueusb/ADD2017/1-1.fs
+
+iftitle [if exist /_/_rescueusb/PGURU.GZ] Partition Guru v.4.7.2
+find --set-root --ignore-floppies --ignore-cd /_/_rescueusb/PGURU.GZ
+map --mem /_/_rescueusb/PGURU.GZ (fd0)
+map --hook
+chainloader (fd0)+1
+rootnoverify (fd0)
+map --floppies=1
+boot
+
+title
+clear
+title
+clear
+title
+clear
+
+# ----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+# ------------------------------------------------------------------------------------------------------------------- PE
+
+iftitle [if exist /2k10/WINPE.LST] Мультизагрузочный 2k10 v.6.1
 configfile /2k10/WINPE.lst
 
-iftitle [if exist /SSTR/menu.lst] WinPE 10 Sergei Strelec (x86/x64) 2016.03.03 >>> \n Загрузочный диск на базе Windows 10 PE - для обслуживания компьютеров, работы с \n жесткими дисками и разделами, резервного копирования и восстановления дисков и \n разделов, диагностики компьютера, восстановления данных, и антивирусы.
+iftitle [if exist /SSTR/menu.lst] WinPE 10 Sergei Strelec (x86/x64) 2016.03.03
 find --set-root --ignore-floppies --ignore-cd /SSTR/bootmgr
 chainloader /SSTR/bootmgr
 
+iftitle [if exist /ILEX/SETUPLDR.BIN] LEX LIVE DX MEDIA 2011 06 05
+find --set-root /ILEX/SETUPLDR.BIN
+chainloader /ILEX/SETUPLDR.BIN
 
-
-
-title ================Utils================
+title
+clear
+title
+clear
+title
 clear
 
+# ----------------------------------------------------------------------------------------------------------------------
 
-iftitle [if exist /veam/bootmgr] Veeam Endpoint Backup FREE 1.1.2.119 \n  Veeam Endpoint Backup FREE — простое решение для резервного копирования данных \n на ноутбуках и настольных ПК под управлением Windows.
-chainloader /veam/bootmgr
 
-title Работа с HDD >>> \n  Запуск программ для резервного копирования и работы с жестким диском.
+
+
+
+
+
+
+# ---------------------------------------------------------------------------------------------------------------- UTILS
+
+title Работа с HDD
 configfile /boot/HDD.lst
 
-title Программы DOS >>> \n Программы работающие в среде DOS.
+title Программы DOS
 configfile /boot/dos.lst
 
 title
 clear
+title
+clear
+title
+clear
 
-title     Выключить ПК   \n \n                            Выключение ПК.
+# ----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+# ----------------------------------------------------------------------------------------------------------------- EXIT
+
+title      Выключить ПК
 halt
 
-title     Перезагрузить ПК    \n \n                       Перезагрузка ПК.
+title      Перезагрузить ПК
 reboot
+
+# ----------------------------------------------------------------------------------------------------------------------
