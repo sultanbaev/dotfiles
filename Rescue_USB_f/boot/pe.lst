@@ -1,0 +1,32 @@
+write (md)0x220+1 !BAT\necho -n -P:0000 %hdrcolor%  29_02_2020_svvitaly_rescue_usb \0 && initscript (md)0x220+1 
+
+title   <<<< Back
+configfile /boot/menu.lst
+
+title
+clear
+
+iftitle [if exist /2K10/WINPE/C9NE.BIN]      -> WinPE Server 2003 (RAM = 128...256)
+chainloader /2K10/WINPE/C9NE.BIN
+
+iftitle [if exist /2k10/WinPE/W7x86PE.WIM]      -> WinPE 7x86 (RAM > 384)
+chainloader /2K10/WINPE/bootmgr.786
+
+iftitle [if exist /2k10/WinPE/W7x86NE.WIM]      -> WinPE 7x86 (RAM = 256...768)
+chainloader /2K10/WINPE/bootmgr.7NE
+
+iftitle [if exist /2k10/WinPE/W1064PE.WIM]      -> WinPE 10x64 (RAM > 768)
+chainloader /2K10/WINPE/bootmgr.X64
+
+title
+clear
+
+iftitle [if exist /_/_rescueusb/PMAGIC/initrd.img]      -> Parted Magic Linux 32bit
+find --set-root --ignore-floppies --ignore-cd /_/_rescueusb/PMAGIC/bzImage
+kernel /_/_rescueusb/PMAGIC/bzImage edd=on directory=/_/_rescueusb vga=normal boot=live eject=no vmalloc=512MiB
+initrd /_/_rescueusb/PMAGIC/initrd.img /_/_rescueusb/PMAGIC/fu.img /_/_rescueusb/PMAGIC/m32.img
+
+iftitle [if exist /_/_rescueusb/PMAGIC/initrd.img]      -> Parted Magic Linux 64bit
+find --set-root --ignore-floppies --ignore-cd /_/_rescueusb/PMAGIC/bzImage64
+kernel /_/_rescueusb/PMAGIC/bzImage64 edd=on directory=/_/_rescueusb vga=normal boot=live eject=no vmalloc=512MiB
+initrd /_/_rescueusb/PMAGIC/initrd.img /_/_rescueusb/PMAGIC/fu.img /LINUX/PMAGIC/m64.img

@@ -1,0 +1,68 @@
+write (md)0x220+1 !BAT\necho -n -P:0000 %hdrcolor%  29_02_2020_svvita/ly_rescue_usb \0 && initscript (md)0x220+1 
+
+title   <<<< Back
+configfile /boot/menu.lst
+
+title
+clear
+
+iftitle [if exist /_/_rescueusb/Qtpro580.IMG]      -> QuickTech Pro (Complex Hardware Test)
+find --set-root /grldr
+kernel /_/_rescueusb/memdisk
+initrd /_/_rescueusb/Qtpro580.IMG
+
+iftitle [if exist /_/_rescueusb/CHECKIT7.GZ]      -> CheckIt Pro (AIDA alike)
+find --set-root --ignore-floppies --ignore-cd /_/_rescueusb/CHECKIT7.GZ
+map --mem /_/_rescueusb/CHECKIT7.GZ (0xff)
+map --hook
+root (0xff)
+chainloader (0xff)
+
+title
+clear
+
+iftitle [if exist /_/_rescueusb/HDDREG.ISO]      -> HDD Regenerator
+find --set-root --ignore-floppies /_/_rescueusb/HDDREG.ISO
+map --mem /_/_rescueusb/HDDREG.ISO (0xff)
+map --hook
+chainloader (0xff)
+
+iftitle [if exist /_/_rescueusb/VCR35R.ISO]      -> Victoria
+find --set-root --ignore-floppies /_/_rescueusb/VCR35R.ISO
+map --mem /_/_rescueusb/VCR35R.ISO (0xff)
+map --hook
+chainloader (0xff)
+
+title
+clear
+
+iftitle [if exist /_/_rescueusb/MT501.ISO]      -> MemTest
+find --set-root --ignore-floppies /_/_rescueusb/MT501.ISO
+map --mem /_/_rescueusb/MT501.ISO (0xff)
+map --hook
+chainloader (0xff)
+
+iftitle [if exist /_/_rescueusb/VMTCE.IMG]      -> Video Memory stress Test
+map --mem /_/_rescueusb/VMTCE.IMG (fd0)
+map --hook
+chainloader (fd0)+1
+rootnoverify (fd0)
+map --floppies=1
+boot
+
+title
+clear
+
+iftitle [if exist /_/_rescueusb/konboot.img]      -> Kon-Boot (boot Windows with unknown password)
+map --mem /_/_rescueusb/konboot.img (fd0)
+map --hook
+chainloader (fd0)+1
+rootnoverify (fd0)
+map --floppies=1
+boot
+
+iftitle [if exist /_/_rescueusb/DBAN-2.3.0.iso]      -> Darik's Boot and Nuke (erase data)
+find --set-root --ignore-floppies /_/_rescueusb/DBAN-2.3.0.iso
+map --mem /_/_rescueusb/DBAN-2.3.0.iso (0xff)
+map --hook
+chainloader (0xff)

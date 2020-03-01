@@ -1,0 +1,29 @@
+write (md)0x220+1 !BAT\necho -n -P:0000 %hdrcolor%  29_02_2020_svvitaly_rescue_usb \0 && initscript (md)0x220+1 
+
+title   <<<< Back
+configfile /boot/menu.lst
+
+title
+clear
+
+iftitle [if exist /_/_rescueusb/ATI2017/1.krn]      -> Acronis True Image 2017
+find --set-root --ignore-floppies --ignore-cd /_/_rescueusb/ATI2017/1.krn
+kernel /_/_rescueusb/ATI2017/1.krn vga=791 quiet
+initrd /_/_rescueusb/ATI2017/1.fs /_/_rescueusb/ATI2017/1-1.fs
+
+iftitle [if exist /_/_rescueusb/ADD2017/1.krn]      -> Acronis Disk Director 2017
+find --set-root --ignore-floppies --ignore-cd /_/_rescueusb/ADD2017/1.krn
+kernel /_/_rescueusb/ADD2017/1.krn vga=791 quiet
+initrd /_/_rescueusb/ADD2017/1.fs /_/_rescueusb/ADD2017/1-1.fs
+
+title
+clear
+
+iftitle [if exist /_/_rescueusb/PGURU.GZ]      -> Partition Guru
+find --set-root --ignore-floppies --ignore-cd /_/_rescueusb/PGURU.GZ
+map --mem /_/_rescueusb/PGURU.GZ (fd0)
+map --hook
+chainloader (fd0)+1
+rootnoverify (fd0)
+map --floppies=1
+boot
