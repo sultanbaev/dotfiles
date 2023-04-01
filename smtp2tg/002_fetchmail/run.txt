@@ -1,0 +1,7 @@
+fetchmail -k
+
+watch fetchmail -k
+
+watch -n 10 "fetchmail -k"
+
+watch -n 5 -d "date | grep 5"

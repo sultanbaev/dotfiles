@@ -1,0 +1,15 @@
+Unit]
+Description=SMTP to Telegram Gateway
+Documentation=https://cdnnow.ru/blog/smtp2tg
+After=nss-lookup.target
+After=network.target
+
+[Service]
+User=smtp2tg
+Environment='SMTP2TG_LISTEN_ADDR=0.0.0.0'
+Environment='SMTP2TG_BOT_TOKEN=1153451493:AAG5qZX1h1AoiBzOh5daiHNWi5MCHNXgW0o'
+Environment='SMTP2TG_CHAT_ID=-296170874'
+ExecStart=/usr/local/bin/smtp2tg
+
+[Install]
+WantedBy=multi-user.target

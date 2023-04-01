@@ -1,0 +1,11 @@
+set invisible
+set no bouncemail
+
+poll imap.gmail.com
+port 993
+proto IMAP
+user "sultanbaev.vitaly@gmail.com"
+password "hwoelgrypdmjxpas"
+ssl
+keep
+mda "mail -s Orion orion@ugok"

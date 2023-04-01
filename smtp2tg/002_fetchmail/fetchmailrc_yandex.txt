@@ -1,0 +1,12 @@
+# set logfile /home/mail/dmosk.local/master/fetchmail.log
+set invisible
+set no bouncemail
+
+poll imap.yandex.ru
+port 993
+proto IMAP
+user "sultanbaevvitaly"
+password "fvejtlaudaxrglmd"
+ssl
+keep
+mda "mail -s test1 orion@pro %T"

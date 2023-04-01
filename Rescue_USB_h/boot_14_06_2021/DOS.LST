@@ -1,0 +1,104 @@
+﻿# Название подменю в шапке
+write (md)0x220+1 !BAT\necho -n -P:0000 %hdrcolor% +++++Программы DOS+++++ \0 && initscript (md)0x220+1 
+
+title     <<<< Вернуться в главное меню\n\n\n                    Вернуться в главное меню.
+configfile /boot/menu.lst
+
+title
+clear
+
+title Memtest86+ 4.20\n\n Memtest86+ - это высокоэффективный тест для оперативной памяти, который с\n легкостью позволит определить ошибки работы в тех или иных конфигурациях.
+map --mem /DOS/MEMTEST4.IMG (fd0)
+map --hook
+chainloader (fd0)+1
+rootnoverify (fd0)
+map --floppies=1
+boot
+
+title Memtest86+ 5.01\n\n Memtest86+ - это высокоэффективный тест для оперативной памяти, который с\n легкостью позволит определить ошибки работы в тех или иных конфигурациях.
+map --mem /DOS/MEMTEST5.IMG (fd0)
+map --hook
+chainloader (fd0)+1
+rootnoverify (fd0)
+map --floppies=1
+boot
+
+title GoldMemory v.7.85 Pro\n Комплексный тест для проверки оперативной памяти на предмет ошибок.\n Поддерживает практически любые типы модулей в различных конфигурациях.\n Позволяет просканировать все доступные модули и определить наличие ошибок,\n которые, как правило, сказываются на нестабильности работы системы в целом.
+map --mem /DOS/GoldMem.img (fd0)
+map --hook
+chainloader (fd0)+1
+rootnoverify (fd0)
+map --floppies=1
+boot
+
+title PassMark Memtest86 4.37\n\n PassMark Memtest86 - это тест для оперативной памяти, который с легкостью\n позволит определить ошибки работы в тех или иных конфигурациях.
+map --mem /DOS/MemTestP.img (fd0)
+map --hook
+chainloader (fd0)+1
+rootnoverify (fd0)
+map --floppies=1
+boot
+
+title Video Memory stress Test v.1.21\n\n Тест позволяет досконально проверить всю доступную для видеопамять на предмет\n сбоев. Результат теста выводится в виде сухих цифр.
+map --mem /DOS/VMTCE.IMG (fd0)
+map --hook
+chainloader (fd0)+1
+rootnoverify (fd0)
+map --floppies=1
+boot
+
+title
+clear
+
+iftitle [if exist /DOS/HIREN.IMA] Hiren's BootCD /@lexapass/ v.15.2\n Русская версия популярного сборника утилит на все случаи жизни. Только DOS-\n версия. По сравнению с оригиналом добавлены DOS-версии Acronis (ADS, ATIEES)\n и Paragon Partition Manager 11. Версия сделана на базе сборки от lexapass,\n адаптирована для 2k10 (удалены дубликаты, добавлен возврат в сборку).
+map --read-only /DOS/HIREN.IMA (fd0) || map --mem /DOS/HIREN.IMA (fd0)
+map --hook
+chainloader (fd0)+1
+rootnoverify (fd0)
+map --floppies=1
+boot
+
+title Victoria 3.52.3 \n Программа для тестирования, сервисного обслуживания и помощи при \n восстановлении информации с любых жёстких дисков с интерфейсами IDE и Serial ATA.
+map --mem /DOS/Victoria_v.3.52.3.ima (fd0) || map --mem /DOS/Victoria_v.3.52.3.ima (fd0)
+map --hook
+chainloader (fd0)+1
+rootnoverify (fd0)
+map --floppies=1
+boot
+
+title FreeDos & HDD Utilites v.1.3 (Rus)\n Загрузочная дискета FreeDos от yurkesha. Поддержка CD/DVD, SCSI, SATA, NTFS,\n LNF. Файловые менеджеры Volkov Commander и DN, Ghost 8.3, тест Astra, отчеты\n по дискам и разделам DiskInfo и PartInfo, утилиты для работы с HDD на низком \n уровне (Ontrack DM, MHDD, Victoria, Vivard, MBRWork).
+map --mem /DOS/HDDUTIL.GZ (fd0)
+map --hook
+chainloader (fd0)+1
+rootnoverify (fd0)
+map --floppies=1
+boot
+
+title
+clear
+
+title Kon-Boot v.2.5 (crack password)\n Использовать следующим образом - запустить утилиту, после возврата назад в\n меню выбрать загрузку своего жесткого диска. После загрузки ОС в поле пароля\n ввести что угодно для любой учетной записи и можно войти в систему. Изначально\n утилита была предназначена для Linux, но позже добавлена поддержка Windows.
+map --mem /DOS/konboot.img (fd0)
+map --hook
+chainloader (fd0)+1
+rootnoverify (fd0)
+map --floppies=1
+boot
+
+title Offline NT/2000/XP/Vista/7 Password Changer\n\n Программа для смены пароля пользователя в операционных системах NT, 2000,\n Windows XP, Windows Vista, Windows 7.
+find --ignore-floppies --set-root /DOS/CHNTPW.GZ
+kernel /DOS/CHNTPW vga=1
+initrd /DOS/CHNTPW.GZ
+
+title Smart Boot Manager 3.7.1\n Отличный загрузчик операционных систем с приятным интерфейсом. Позволяет\n загружать множество операционных систем. По функциональным возможностям схож\n с LiLO. Поддерживает работу с Solaris 8, Windows 2000, FreeBSD, GNU/Linux, \n BeOS, DOS, Windows 9x/NT, OS/2 и Novell Netware.
+map --mem /DOS/sbm.img (fd0)
+map --hook
+chainloader (fd0)+1
+rootnoverify (fd0)
+map --floppies=1
+boot
+
+title QuickTech Pro 5.80\n Диагностическая программа профессионального уровня для желающих проверить\n и исследовать основные системные компоненты, функции и периферию. Тестирует\n любое "железо", установленное в вашей машине. Включены тесты: процессора,\n ОЗУ, жёсткого диска, материнской платы, видеокарты, модема, монитора и т.д.
+find --set-root /grldr
+kernel /DOS/memdisk
+initrd /DOS/Qtpro580.IMG
